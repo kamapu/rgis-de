@@ -1,0 +1,31 @@
+project:
+  type: website
+  #resources: ["documents/screenplay.pdf","documents/vegetation_in_r.pdf"]
+  output-dir: public
+  preview: 
+    port: 4200
+    browser: true
+
+website:
+  title: ""
+  favicon: /images/favicon.ico
+  navbar:
+    logo: /images/logo_miguel.png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Impressum.qmd
+        text: Impressum
+    right: 
+      - href: Sitzungen.qmd
+        text: Sitzungen
+      - href: Lernmaterial.qmd
+        text: Lernmaterial
+      - href: Trainer.qmd
+        text: Trainer
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
