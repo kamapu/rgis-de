@@ -1,0 +1,8 @@
+# Page Preview
+public
+
+# LibreOffice temporaries
+**/*.docx#
+**/*.xlsx#
+
+/.quarto/

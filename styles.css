@@ -1,0 +1,23 @@
+/* css styles */
+
+.navbar {
+  background-color: #a9e4aa;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+p {
+  font-family: FreeSans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: FreeSans;
+}
+
+/* Control the height of the logo */
+.navbar-brand img {
+  /*max-height: 45px;*/
+  max-height: 60px;
+}

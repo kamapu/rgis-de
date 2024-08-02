@@ -1,0 +1,5 @@
+---
+title: Trainer
+---
+
+![](images/dalle-workers.jpg)

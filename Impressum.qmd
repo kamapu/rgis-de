@@ -1,0 +1,23 @@
+---
+title: Impressum
+toc: false
+---
+
+### Layout und Inhalt
+
+Miguel Alvarez\
+Hammerhof 2\
+53844 Troisdorf\
+Deutschland
+
+### Kontakt
+
+E-mail: <kamapu@posteo.de>
+
+
+### Disclaimer
+
+Die Erstellung und Bearbeitung von Text- und Bildinhalten wird durch künstliche Intelligenz unterstützt.
+
+[![](https://img.shields.io/badge/License-CC--BY--SA-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0)
+
