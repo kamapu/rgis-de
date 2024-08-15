@@ -1,0 +1,42 @@
+---
+title: "R and GIS"
+date: '2024-05-29'
+author: Miguel Alvarez
+date-modified: today
+image: images/pirat-ship-cover.jpg
+categories:
+  - Session
+description:
+  Learn the basics of geographic information systems (GIS) and spatial data in R.
+draft: false
+---
+
+# Requirements
+
+Downloading the data from [here](gis_data.zip).
+
+```{r}
+#| eval: false
+download.file(
+    url = "https://kamapu.gitlab.io/coachingR/Topics/GIS/gis_data.zip",
+    destfile = "gis_data.zip", method = "curl")
+unzip("gis_data.zip", overwrite = TRUE)
+unlink("gis_data.zip")
+```
+
+# Exercise
+
+Following landscape elements are recognized in the raster **dem_big.asc**.
+
+- Oberrheingraben
+- Neuwieder Becken
+- Oberen Mittelrhein
+- Unteren Mittelrhein
+- Westerwald
+- Eifel
+- Hunsrück
+- Taunus
+
+Plot the DEM and add labels showing their respective positions.
+
+

@@ -1,0 +1,407 @@
+---
+title: "Einführung in R und RStudio"
+date: '2024-08-26'
+author: Miguel Alvarez
+date-modified: today
+#image: ants-row.jpg
+description:
+  Kurze Beschreibung.
+draft: false
+---
+
+# R und RStudio
+
+R ist zugleich eine Programmiersprache sowie ein Interface.
+
+Vorteile einer Skript-basierte Programmiersprache sind:
+
+- Reproduzierbarkeit
+- Dokumentation
+
+Für eine optimale Unterstützung in das Programmieren mit R nutzt man in der Regel ein Editor/IDE.
+
+RStudio
+
+- TinnR
+- Eclipse/StatET
+- Visual Studio Code
+
+Tour durch RStudio
+
+# Einführung in Vektoren
+
+Der Vektor ist das grundlegende Datenobjekt in R. Ein gründliches Verständnis seiner Struktur und seiner Grundfunktionen erleichtert die Arbeit mit komplexeren Objekten.
+
+::: {.callout-caution}
+## Daten-Klassen?
+
+- Welche verschiedene Datentypen kennst du?
+- Kennst du die entsprechende R-Klasse?
+
+:::
+
+
+The attributes of vectors are basically two:
+
+- class
+- length
+
+Optionally, the elements in the vectors can be named using the function `names()`.
+In this case the names must be unique.
+
+
+## Classes of vectors
+
+The basic classes for vectors in R are:
+
+- `logical`
+- `numeric`
+  - `double`
+  - `integer`
+- `complex`
+- `character`
+
+Here are a few examples of vectors that belong to different classes.
+
+```{r}
+# Logical vector
+c(1:10) >= 7
+
+# Integer
+c(1:10)
+
+# Numeric
+c(1:10)/2
+
+# Character
+letters[1:10]
+```
+
+::: {.callout-caution}
+## Retrieve and coerce
+
+Check the outputs of following functions applied to different vectors:
+
+- `typeof()`
+- `mode()`
+- `class()`
+
+Alternatively you can use `is.*()` methods.
+
+Now apply coercion with the functions with `as.*()` methods.
+
+:::
+
+::: {.callout-tip}
+## Comment vectors
+
+Commenting vectors can be usefull to remember or inform collaborators about their content.
+
+```{r}
+comment(letters) <- "These are all lower case letters."
+comment(letters)
+```
+
+:::
+
+
+A complex value is a number that includes an imaginary component.
+
+```{r}
+# Square root of -1
+sqrt(-1)
+
+# Coerce -1 to complex
+sqrt(as.complex(-1))
+```
+
+
+::: {.callout-tip}
+## Euler's Identity
+
+[Euler's identity](https://en.wikipedia.org/wiki/Euler%27s_identity) is often described as a mathematical beauty.
+Its formula is expressed as
+
+$e^{i\pi} = -1$
+
+It is calculated in R as follows
+
+```{r}
+#| warning: false
+exp(1i*pi)
+
+# in other words
+as.numeric(exp(1i*pi)) + 1 == 0
+```
+
+:::
+
+There are a few special types of values.
+These can be useful, or they can result unexpectedly from various mathematical operations.
+
+- `NULL` (null value)
+- `NA` (not available value)
+- `NaN` (not a number)
+- `Inf`/`-Inf` (infinite value)
+
+## Index elements in vectors
+
+To access or extract an element of a vector in R, use square brackets (`[]`).
+You can use either integers or logical values as an index.
+For named vectors, you can also use character values as indices.
+
+```{r}
+# Index using integer
+letters[c(1, 5, 20)]
+
+# Index using logical values
+LETTERS[!LETTERS %in% c("A", "B", "M", "Z")] 
+
+# Index using characters
+A <- seq_along(letters)
+names(A) <- letters
+A[c("x", "l", "c")]
+```
+
+You can also use negative integers to exclude elements from a vector.
+
+```{r}
+c(1:5)[-3]
+```
+
+# Factors
+
+The `factor` class is specifically designed to contain categorical variables.
+Coding categorical variables as `factor` instead of `character` allows for more meaningful summaries.
+
+```{r}
+# Character vector
+performance <- sample(c("low", "medium", "high"), size = 100,
+    replace = TRUE)
+class(performance)
+summary(performance)
+
+# Transform to factor
+performance <- as.factor(performance)
+summary(performance)
+```
+
+In the previous case, the levels are sorted according to their alphabetical order, but this may not make sense, so we need to specify the levels (classes) for the categorical variable beforehand.
+
+```{r}
+# back transformation to character
+performance <- as.character(performance)
+
+# Factors with preset levels
+performance <- factor(performance,
+    levels = c("low", "medium", "high"))
+summary(performance)
+```
+
+Ordinal variables are a special case of categorical variables.
+In this case, levels (classes) represent a hierarchy within a scale, but not in a metric sense.
+Such variables are represented by the `ordered` class, which is similar to `factor` but allows some additional operations.
+
+
+# Further Types
+
+Variables related to the time are represented by the class `Date` for calendar dates and `POSIX*` (`POSIXct`/`POSIXlt`) for time.
+They will be dealt with in a separate post (see [here](../Time/)).
+
+To complete the R jargon, we need to consider the following elements:
+
+- A **symbol** represents a variable (object or vector) to be accessed, and is usually typed into the console without quotes.
+- An `expression` is a mathematical expression. It can be used to insert mathematical expressions into graphics.
+- A `formula` is usually written as a symbol (without any quotes) and uses a tilde to separate the left term (response) from the right terms (factors), for example `response ~ factor1 + factor2`.
+
+
+# Date in R
+
+The date is represented in R by the class `Date`.
+Internally, this class stores the number of days since 1 January 1970.
+This allows us to record events and apply mathematics to them.
+
+```{r}
+# The refeence date
+as.Date(0, origin = "1970-01-01")
+
+# Today's date
+as.Date(Sys.Date())
+
+# Days since them
+difftime(as.Date(Sys.Date()), as.Date(0, origin = "1970-01-01"))
+```
+
+<!--
+Note that the behaviour of `as.Date(0)` may be different in new R versions.
+-->
+
+
+## Text to Date and Vice Versa
+
+The usual way of representing dates as text by R is in the format "YYYY-MM-DD", for example 1 January 2000.
+
+```{r}
+new_world <- as.Date("2000-01-01")
+class(new_world)
+new_world
+
+# Days since the change of Millenia
+difftime(as.Date(Sys.Date()), new_world,)
+```
+
+::: {.callout-tip}
+# Formats for date and time in R
+
+To convert dates and times from and to characters in R, there is a list of tags starting with the symbol "%".
+The full list of tags can be found in the help for the `strptime()` function:
+
+```{r}
+#| eval: false
+# See the help documentation
+?strptime
+```
+
+The usual date format is represented by the string "%Y-%m-%d".
+
+:::
+
+We can use the `strptime()` function to convert strings to `Date`, declaring the appropriate formats.
+
+```{r}
+# Approximate Beethoven's birthday
+as.Date(strptime("17.12.1770", format = "%d.%m.%Y"))
+
+# Einstein's birthday (system must be set in English language)
+as.Date(strptime("14 March 1879", format = "%d %B %Y"))
+```
+
+To extract elements from a date vector, you can use the function `format()` for it.
+Note that the outputs will be always a character value, thus you may need to coerce numbers to integers.
+
+```{r}
+# Hypothetical birthday
+bd <- "15-06"
+
+# Birthdays along 10 years
+bd <- paste(bd, c(2025:2035), sep = "-")
+
+# Transform to Date
+bd <- as.Date(strptime(bd, format = "%d-%m-%Y"))
+
+# Weekdays
+next_birthdays <- data.frame(
+  date = bd,
+  weekday = format(bd, format = "%A"))
+next_birthdays
+```
+
+::: {.callout-tip collapse="true"}
+# Changing Languages
+
+The use of names for dates depends on the language set in your system.
+You may be able to change this setting on the fly.
+
+```{r}
+# Save the current locale
+locale <- Sys.getlocale("LC_TIME")
+
+# Weekdays in German
+Sys.setlocale("LC_TIME", "de_DE.UTF-8")
+format(bd, format = "%A")
+
+# Weekdays in Spanish
+Sys.setlocale("LC_TIME", "es_ES.utf8")
+format(bd, format = "%A")
+
+# Back to old locale
+Sys.setlocale("LC_TIME", locale)
+format(bd, format = "%A")
+```
+
+:::
+
+
+# Time in R
+
+Time in R is handled by two alternative classes, namely **POSIXct** and **POSIXlt**.
+For example, looking at the current time.
+
+```{r}
+Sys.time()
+```
+
+Here we recognise the date as part of the information, including the time (hours, minutes and seconds) and the time zone.
+
+Here you can use again the well known tags and the function `strptime()` to convert characters to time.
+
+```{r}
+just_now <- strptime("06.05.2024 um 17.30",
+  format = "%d.%m.%Y um %H.%M", tz = "Europe/Berlin")
+just_now
+```
+
+## Time conversion
+
+May we like to convert the time to a different time zone, we can use the package [**lubridate**](https://lubridate.tidyverse.org/).
+
+```{r}
+library(lubridate)
+
+# Santiago de Chile
+with_tz(just_now, tz = "America/Santiago")
+
+# Kenya
+with_tz(just_now, tz = "Africa/Nairobi")
+```
+
+::: {.callout-tip}
+# List of time zones
+
+A complete list of time zones can be found at [this Wikipedia page](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (column **TZ identifier**).
+:::
+
+
+::: {.callout-caution}
+# Exercises
+
+- Read the data set [fuel-prices.csv](../Data/index.qmd#weekly-fuel-prices). Format the date column in R accordingly.
+- In which weekday is the summary done?
+- Do a boxplot comparing the prices between years.
+:::
+
+
+# Weekly Fuel Prices
+
+Average weekly fuel prices in the UK.
+The data have been downloaded from [GOV.UK](https://www.gov.uk/government/statistics/weekly-road-fuel-prices) and slightly modified.
+
+The dataset is in csv format (comma separated values) and can be imported into R as a data frame.
+The columns in the data frame are
+
+- **date**: Date of weekly summary
+- **petrol**: Petrol pump price in pence per litre
+- **diesel**: Diesel pump price in pence per litre
+- **petrol_dr**: Petrol duty rate in pence per litre
+- **diesel_dr**: Diesel duty rate in pence per litre
+- **petror_vat**: Petrol VAT as percentage rate
+- **diesel_vat**: Diesel VAT as percentage rate
+
+You can dowload the data from [this link](fuel-prices.csv) and store it in your working directory.
+Alternatively you can download it directly from your running session by using following command:
+
+```{r}
+#| eval: false
+download.file(
+    url = "https://kamapu.gitlab.io/coachingR/Topics/Data/fuel-prices.csv",
+    destfile = "fuel-prices.csv", method = "curl")
+```
+
+After that, import the data in your session.
+
+```{r}
+fuel_prices <- read.csv("fuel-prices.csv")
+head(fuel_prices)
+```
+
+
