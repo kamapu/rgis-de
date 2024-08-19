@@ -1,0 +1,13 @@
+---
+title: "Arbeit mit Geländemodellen"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+#image: images/pirat-ship-cover.jpg
+description:
+  Berechnungen von Informationen aus Vektoren.
+draft: false
+---
+
+- TPI/TWI
+- Moving Windows

@@ -1,0 +1,13 @@
+---
+title: "Benötigtes Software Installieren"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+#image: images/pirat-ship-cover.jpg
+description:
+  Berechnungen von Informationen aus Vektoren.
+draft: false
+---
+
+- Hinweise für das Installieren von benötigstes Software.
+

@@ -1,0 +1,14 @@
+---
+title: "Berechnungen aus Vektoren"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+#image: images/pirat-ship-cover.jpg
+description:
+  Berechnungen von Informationen aus Vektoren.
+draft: false
+---
+
+- Länge und Fläche
+- Dichte von Punkten
+- Entfernung zu Objekten

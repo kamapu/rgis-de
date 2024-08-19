@@ -7,6 +7,7 @@ date-modified: today
 description:
   Kurze Beschreibung.
 draft: false
+sort: 2
 ---
 
 # R und RStudio
@@ -400,6 +401,7 @@ download.file(
 After that, import the data in your session.
 
 ```{r}
+#| eval: false
 fuel_prices <- read.csv("fuel-prices.csv")
 head(fuel_prices)
 ```

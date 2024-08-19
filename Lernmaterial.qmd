@@ -1,5 +1,8 @@
 ---
 title: Lernmaterial
+listing:
+  contents:
+    - Lernmaterial/Foliensatz/index.qmd
+  type: grid
+  sort: false
 ---
-
-![](images/dalle-workers.jpg)

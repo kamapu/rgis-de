@@ -1,0 +1,14 @@
+---
+title: "Berechnungen in Raster-Datensätzen"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+#image: images/pirat-ship-cover.jpg
+description:
+  Berechnungen von Informationen aus Vektoren.
+draft: false
+---
+
+- Klassifizieren
+- Algebra in Raster Datensätzen
+- Projektionen
