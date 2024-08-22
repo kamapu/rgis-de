@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!Lernmaterial/Foliensatz/R-intro.qmd"
   #resources: ["documents/screenplay.pdf","documents/vegetation_in_r.pdf"]
   output-dir: public
   preview: 

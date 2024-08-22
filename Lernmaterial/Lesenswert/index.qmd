@@ -1,5 +1,5 @@
 ---
-title: "Berechnungen in Raster-Datensätzen"
+title: "Lesenswert"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
@@ -9,6 +9,4 @@ description:
 draft: false
 ---
 
-- Klassifizieren
-- Algebra in Raster Datensätzen
-- Projektionen
+Liste von Referenzen.

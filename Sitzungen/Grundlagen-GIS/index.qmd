@@ -1,13 +1,11 @@
 ---
-title: "R and GIS"
-date: '2024-05-29'
+title: "Grundlagen von GIS"
+date: '2024-08-26'
 author: Miguel Alvarez
 date-modified: today
-image: images/pirat-ship-cover.jpg
-categories:
-  - Session
+image: ../../images/dalle-workers.jpg
 description:
-  Learn the basics of geographic information systems (GIS) and spatial data in R.
+  Eine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.
 draft: false
 ---
 

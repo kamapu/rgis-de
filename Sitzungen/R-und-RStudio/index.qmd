@@ -3,11 +3,10 @@ title: "Einführung in R und RStudio"
 date: '2024-08-26'
 author: Miguel Alvarez
 date-modified: today
-#image: ants-row.jpg
+image: ../../images/dalle-workers.jpg
 description:
-  Kurze Beschreibung.
+  Crash-Kurs in die Arbeit mit RStudio und Grundlagen von R.
 draft: false
-sort: 2
 ---
 
 # R und RStudio

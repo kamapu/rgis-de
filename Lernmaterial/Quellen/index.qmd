@@ -1,0 +1,24 @@
+---
+title: "Zusätzliche Datenquellen Online"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+#image: images/pirat-ship-cover.jpg
+description:
+  Berechnungen von Informationen aus Vektoren.
+draft: false
+---
+
+# Direktes Herunterladen
+
+- [Open Data Portal am Bundesamt für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/open-data.html)
+- [Open Data Portal der Stadt Bochum](https://www.bochum.de/Open-Data/Datensaetze)
+- [Portal des Deutschen Wetter Dienstes](https://dwd-geoportal.de/)
+
+# Herunterladen mit APIs oder Paketen
+
+
+Open Street Map mit osmdata
+
+- Vignette: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html
+- OSM map features: https://wiki.openstreetmap.org/wiki/Map_features#Building

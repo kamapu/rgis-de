@@ -1,11 +1,11 @@
 ---
 title: "Arbeit mit Geländemodellen"
-date: '2024-08-19'
+date: '2024-08-28'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: ../../images/dalle-workers.jpg
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Methoden, die speziell für die Auswertung von Geländemodellen geeignet sind.
 draft: false
 ---
 

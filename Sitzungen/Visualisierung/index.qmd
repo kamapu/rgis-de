@@ -1,0 +1,14 @@
+---
+title: "Visualisierung räumlicher Daten"
+date: '2024-08-30'
+author: Miguel Alvarez
+date-modified: today
+image: ../../images/dalle-workers.jpg
+description:
+  Wiederholung der Funktionen zur Darstellung geographischer und nicht-geographischer Informationen.
+draft: false
+---
+
+- ggplot (again)
+- Karten
+- leaflet?

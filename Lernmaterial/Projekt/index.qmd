@@ -1,5 +1,5 @@
 ---
-title: "Berechnungen aus Vektoren"
+title: "Abschlussprojekt"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
@@ -9,6 +9,5 @@ description:
 draft: false
 ---
 
-- Länge und Fläche
-- Dichte von Punkten
-- Entfernung zu Objekten
+Details für die Vorbereitung des Abschlussprotokoll.
+

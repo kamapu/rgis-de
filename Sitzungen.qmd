@@ -4,10 +4,11 @@ listing:
   contents:
     - Sitzungen/R-und-RStudio/index.qmd
     - Sitzungen/Grundlagen-GIS/index.qmd
-    - Sitzungen/Berechnungen-in-Vektoren/index.qmd
-    - Sitzungen/Berechnungen-in-Rasters/index.qmd
+    - Sitzungen/Vektoren/index.qmd
+    - Sitzungen/Rasters/index.qmd
     - Sitzungen/Gelände/index.qmd
     - Sitzungen/Modellen/index.qmd
+    - Sitzungen/Visualisierung/index.qmd
   type: grid
   sort: false
 ---

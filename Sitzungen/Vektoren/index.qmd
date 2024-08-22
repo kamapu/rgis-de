@@ -1,0 +1,14 @@
+---
+title: "Auswertung von Geländemodellen"
+date: '2024-08-27'
+author: Miguel Alvarez
+date-modified: today
+image: ../../images/dalle-workers.jpg
+description:
+  Behandlung von Objekten, die als vektorielle Geometrien in GIS repräsentiert werden, mit Schwerpunkt auf dem Paket `sf`.
+draft: false
+---
+
+- Länge und Fläche
+- Dichte von Punkten
+- Entfernung zu Objekten

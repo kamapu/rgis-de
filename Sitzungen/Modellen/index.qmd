@@ -1,13 +1,13 @@
 ---
-title: "Arbeit mit Geländemodellen"
-date: '2024-08-19'
+title: "Regressionsmodelle"
+date: '2024-08-29'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: ../../images/dalle-workers.jpg
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Einschätzung von Korrelationen und Entwerfung von Regressionsmodellen.
 draft: false
 ---
 
-- TPI/TWI
-- Moving Windows
+- Regression
+- Autokorrelation
