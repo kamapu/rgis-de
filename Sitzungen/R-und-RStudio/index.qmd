@@ -341,20 +341,6 @@ just_now <- strptime("06.05.2024 um 17.30",
 just_now
 ```
 
-## Time conversion
-
-May we like to convert the time to a different time zone, we can use the package [**lubridate**](https://lubridate.tidyverse.org/).
-
-```{r}
-library(lubridate)
-
-# Santiago de Chile
-with_tz(just_now, tz = "America/Santiago")
-
-# Kenya
-with_tz(just_now, tz = "Africa/Nairobi")
-```
-
 ::: {.callout-tip}
 # List of time zones
 
