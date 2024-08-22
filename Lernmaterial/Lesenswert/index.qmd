@@ -3,10 +3,24 @@ title: "Lesenswert"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: logo-books.png
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Hier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.
 draft: false
+bibliography: references.bib
+cls: https://www.zotero.org/styles/vegetation-classification-and-survey.cls
+nocite: |
+  @*
 ---
 
-Liste von Referenzen.
+```{r}
+#| echo: false
+library(biblio)
+Bib <- read_bib("MiguelReferences.bib")
+Sel <- read.csv("selected-refs.csv")
+Bib <- subset(Bib, bibtexkey %in% Sel$bibtexkey)
+write_bib(Bib, "references.bib")
+```
+
+Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst.
+Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.
