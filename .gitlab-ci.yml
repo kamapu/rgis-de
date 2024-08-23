@@ -2,6 +2,11 @@ stages:
   - test
   - deploy
 
+before_script:
+  - apt-get update
+  - apt-get install -y --no-install-recommends build-essential
+  - R -e 'install.packages(c("biblio"))'
+
 # This job is only executed in feature branches, so it is possible to check the
 # generated files via the job artefacts before a merge into the default branch.
 test:
