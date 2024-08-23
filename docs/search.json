@@ -37,7 +37,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Auswertung von Umweltvariablen | mit der statistischen | Programmiersprache R",
+    "title": "Auswertung von Umweltvariablen\nmit der statistischen\nProgrammiersprache R”",
     "section": "",
     "text": "… ein Fall für die R Pakete sf und terra\n\nWillkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!\nIn diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.\nViel Spaß dabei!"
   },
@@ -168,10 +168,24 @@
     "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"type\"])"
   },
   {
+    "objectID": "Lernmaterial/Dateien/index.html#krankenhäuser",
+    "href": "Lernmaterial/Dateien/index.html#krankenhäuser",
+    "title": "Verteilte Dateien",
+    "section": "Krankenhäuser",
+    "text": "Krankenhäuser\nDieser Datensatz ist ebenfalls mit osmdata für Bochum heruntergeladen.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_krh &lt;- readRDS(\"data/hospitals.rds\")\nplot(st_geometry(Bochum_krh), col = \"red\", border = \"red\")"
+  },
+  {
     "objectID": "Lernmaterial/Dateien/index.html#geländemodel-dgm200m",
     "href": "Lernmaterial/Dateien/index.html#geländemodel-dgm200m",
     "title": "Verteilte Dateien",
     "section": "Geländemodel DGM200m",
     "text": "Geländemodel DGM200m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-200m.tif\")\nplot(DGM)"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#geländemodel-dgm1000m",
+    "href": "Lernmaterial/Dateien/index.html#geländemodel-dgm1000m",
+    "title": "Verteilte Dateien",
+    "section": "Geländemodel DGM1000m",
+    "text": "Geländemodel DGM1000m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie. Diese Datei liegt im ASCII-Format vor.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-1000m.asc\")\ncrs(DGM) &lt;- \"epsg:25832\"\nplot(DGM)"
   }
 ]

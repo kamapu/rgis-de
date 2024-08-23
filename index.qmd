@@ -1,7 +1,8 @@
 ---
-title: Auswertung von Umweltvariablen
+title: |
+  | Auswertung von Umweltvariablen
   | mit der statistischen
-  | Programmiersprache R
+  | Programmiersprache R"
 toc: false
 ---
 

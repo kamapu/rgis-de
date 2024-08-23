@@ -169,7 +169,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bodenfeuchte-messungen" id="toc-bodenfeuchte-messungen" class="nav-link" data-scroll-target="#bodenfeuchte-messungen">Bodenfeuchte Messungen</a></li>
   <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
   <li><a href="#straßennetz-in-bochum" id="toc-straßennetz-in-bochum" class="nav-link" data-scroll-target="#straßennetz-in-bochum">Straßennetz in Bochum</a></li>
+  <li><a href="#krankenhäuser" id="toc-krankenhäuser" class="nav-link" data-scroll-target="#krankenhäuser">Krankenhäuser</a></li>
   <li><a href="#geländemodel-dgm200m" id="toc-geländemodel-dgm200m" class="nav-link" data-scroll-target="#geländemodel-dgm200m">Geländemodel DGM200m</a></li>
+  <li><a href="#geländemodel-dgm1000m" id="toc-geländemodel-dgm1000m" class="nav-link" data-scroll-target="#geländemodel-dgm1000m">Geländemodel DGM1000m</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -310,17 +312,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geländemodel-dgm200m" class="level2">
-<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
-<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
+<section id="krankenhäuser" class="level2">
+<h2 class="anchored" data-anchor-id="krankenhäuser">Krankenhäuser</h2>
+<p>Dieser Datensatz ist ebenfalls mit <code>osmdata</code> für Bochum heruntergeladen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Bochum_krh <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/hospitals.rds"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum_krh), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geländemodel-dgm200m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geländemodel-dgm1000m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm1000m">Geländemodel DGM1000m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S">Portal des Bundesamtes für Kartographie und Geodäsie</a>. Diese Datei liegt im ASCII-Format vor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-1000m.asc"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(DGM) <span class="ot">&lt;-</span> <span class="st">"epsg:25832"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

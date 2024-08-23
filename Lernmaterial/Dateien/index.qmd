@@ -66,6 +66,19 @@ Bochum_str <- readRDS("data/roads.rds")
 plot(Bochum_str["type"])
 ```
 
+## Krankenhäuser
+
+Dieser Datensatz ist ebenfalls mit `osmdata` für Bochum heruntergeladen.
+
+```{r}
+library(sf)
+#library(ggplot2)
+Bochum_krh <- readRDS("data/hospitals.rds")
+plot(st_geometry(Bochum_krh), col = "red", border = "red")
+```
+
+
+
 ## Geländemodel DGM200m
 
 Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m.
@@ -78,5 +91,21 @@ library(terra)
 DGM <- rast("data/dgm-200m.tif")
 plot(DGM)
 ```
+
+
+## Geländemodel DGM1000m
+
+Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m.
+Das Modell stammt aus dem [Portal des Bundesamtes für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S).
+Diese Datei liegt im ASCII-Format vor.
+
+```{r}
+#| message: false
+library(terra)
+DGM <- rast("data/dgm-1000m.asc")
+crs(DGM) <- "epsg:25832"
+plot(DGM)
+```
+
 
 
