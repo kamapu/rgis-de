@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel Alvarez">
-<meta name="description" content="Berechnungen von Informationen aus Vektoren.">
+<meta name="description" content="Pfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.">
 
-<title>Benötigtes Software Installieren</title>
+<title>R Installieren</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -124,20 +158,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Auf dieser Seite</h2>
+   
+  <ul>
+  <li><a href="#r-und-rstudio" id="toc-r-und-rstudio" class="nav-link active" data-scroll-target="#r-und-rstudio">R und RStudio</a></li>
+  <li><a href="#r-pakete" id="toc-r-pakete" class="nav-link" data-scroll-target="#r-pakete">R-Pakete</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Benötigtes Software Installieren</h1>
+<h1 class="title">R Installieren</h1>
 </div>
 
 <div>
   <div class="description">
-    Berechnungen von Informationen aus Vektoren.
+    Pfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.
   </div>
 </div>
 
@@ -172,11 +214,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li>Hinweise für das Installieren von benötigstes Software.</li>
-</ul>
+<section id="r-und-rstudio" class="level1">
+<h1>R und RStudio</h1>
+<p>Obwohl die Software, die wir für den Kurs benötigen, bereits im CIP-Pool vorhanden ist, hier sind einige Hinweise, falls du auf deinem eigenen Computer üben möchtest. Die Arbeit in diesem Kurs konzentriert sich auf <strong>R</strong> und <strong>RStudio</strong>.</p>
+<p><a href="https://cran.rstudio.com/"><img src="https://img.shields.io/badge/install-R-blue.svg" class="img-fluid"></a> <a href="https://posit.co/download/rstudio-desktop/"><img src="https://img.shields.io/badge/install-RStudio-blue.svg" class="img-fluid"></a></p>
+</section>
+<section id="r-pakete" class="level1">
+<h1>R-Pakete</h1>
+<p>Spezielle Aufgaben, wie sie bei GIS-Anwendungen anfallen, werden in R durch Erweiterungen zur Verfügung gestellt. Erweiterungen werden im R-Jargon <strong>Pakete</strong> (packages) genannt. Das offizielle Repository für R-Packages ist das Comprehensive R Archive Network, kurz [CRAN] (https://cran.rstudio.com/). Von dort können Pakete direkt in der laufenden Sitzung per Kommandozeile installiert werden.</p>
+<p>Für den Kurs kannst du <a href="install-packages.R">dieses Skript</a> herunterladen und ausführen. Alternativ kannst du die folgenden Kommandozeilen kopieren und in deine Konsole einfügen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Update Pakages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Install missing requirements</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyr"</span>, <span class="st">"dplyr"</span>, <span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"terra"</span>, <span class="st">"stars"</span>, <span class="st">"osmdata"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">"leaflet"</span>,  <span class="st">"mapview"</span>, <span class="st">"geodata"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>missing_pkgs <span class="ot">&lt;-</span> pkgs[<span class="sc">!</span>pkgs <span class="sc">%in%</span> <span class="fu">installed.packages</span>()]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(missing_pkgs))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(missing_pkgs)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Cross-check</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>missing_pkgs <span class="ot">&lt;-</span> pkgs[<span class="sc">!</span>pkgs <span class="sc">%in%</span> <span class="fu">installed.packages</span>()]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">length</span>(missing_pkgs)) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">"Success!"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">stop</span>(<span class="fu">paste0</span>(<span class="fu">c</span>(<span class="st">"Following packages were not installed:"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>     <span class="fu">paste0</span>(<span class="st">"  - "</span>, missing_pkgs)), <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pakete laden nicht vergessen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Tatsache, dass Pakete installiert sind, bedeutet nicht, dass sie direkt in der Sitzung verwendet werden können. Die Pakete müssen in die Session geladen werden. Dazu benutzt man in R die Funktion <code>library()</code>.</p>
+</div>
+</div>
+</section>
+<section id="optional" class="level1">
+<h1>Optional</h1>
+<p>Räumliche Daten können in <strong>Google Earth</strong> oder <strong>QGIS</strong> visualisiert werden. Dies ist jedoch kein obligatorischer Bestandteil des Kurses.</p>
+<p><a href="https://www.google.com/intl/de_in/earth/versions/#earth-pro"><img src="https://img.shields.io/badge/install-Google_Earth-blue.svg" class="img-fluid"></a> <a href="https://qgis.org/download/"><img src="https://img.shields.io/badge/install-QGIS-blue.svg" class="img-fluid"></a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
