@@ -4,7 +4,7 @@ project:
     - "*.qmd"
     - "!Lernmaterial/Foliensatz/R-intro.qmd"
   #resources: ["documents/screenplay.pdf","documents/vegetation_in_r.pdf"]
-  output-dir: public
+  output-dir: docs
   preview: 
     port: 4200
     browser: true

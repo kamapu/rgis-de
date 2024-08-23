@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Miguel Alvarez">
-<meta name="description" content="Hier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.">
 
-<title>Lesenswert</title>
+<title>Lernmaterial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,46 +20,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../..//images/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href=".//images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,9 +69,67 @@ div.csl-indent {
     "search-label": "Suchen"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../../styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -101,8 +139,8 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo_miguel.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo_miguel.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Suchen"></div>
@@ -112,25 +150,25 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Impressum.html"> 
+    <a class="nav-link" href="./Impressum.html"> 
 <span class="menu-text">Impressum</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../Sitzungen.html"> 
+    <a class="nav-link" href="./Sitzungen.html"> 
 <span class="menu-text">Sitzungen</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Lernmaterial.html"> 
+    <a class="nav-link active" href="./Lernmaterial.html" aria-current="page"> 
 <span class="menu-text">Lernmaterial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Trainer.html"> 
+    <a class="nav-link" href="./Trainer.html"> 
 <span class="menu-text">Trainer</span></a>
   </li>  
 </ul>
@@ -152,38 +190,15 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesenswert</h1>
+<h1 class="title">Lernmaterial</h1>
 </div>
 
-<div>
-  <div class="description">
-    Hier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor:in</div>
-    <div class="quarto-title-meta-contents">
-             <p>Miguel Alvarez </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">19. August 2024</p>
-    </div>
-  </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Geändert</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">22. August 2024</p>
-    </div>
-  </div>
     
   </div>
   
@@ -192,40 +207,157 @@ div.csl-indent {
 </header>
 
 
-<p>Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst. Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.</p>
 
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Burrough2016" class="csl-entry" role="listitem">
-Burrough, Peter A, und Rachael A McDonnell. 2016. <em>Principles of geographical information systems</em>. Oxford: Oxford University Press.
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589426" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<a href="./Lernmaterial/Foliensatz/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Foliensätze für den Kurs
+</h5>
+<div class="card-text listing-description">
+Berechnungen von Informationen aus Vektoren.
 </div>
-<div id="ref-Crawley2013" class="csl-entry" role="listitem">
-Crawley, Michael J. 2013. <em>The <span>R</span> book</em>. Wiley. <a href="https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf">https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf</a>.
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
 </div>
-<div id="ref-Dormann2008" class="csl-entry" role="listitem">
-Dormann, Carsten F, und Ingolf Kühn. 2008. <em>Angewandte <span>Statistik</span> für die biologischen <span>Wissenschaften</span></em>. Bd. 2. Leipzig-Halle: UFZ. <a href="https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf">https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf</a>.
+<div class="listing-date">
+19.08.2024
 </div>
-<div id="ref-Hengl2009" class="csl-entry" role="listitem">
-Hengl, Tomislav. 2009. <em>A practical guide to geostatistical mapping of environmental variables</em>. Amsterdam. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC38153">https://publications.jrc.ec.europa.eu/repository/handle/JRC38153</a>.
 </div>
-<div id="ref-Hengl2018a" class="csl-entry" role="listitem">
-Hengl, Tomislav, und Robert A. MacMillan. 2018. <em>Predictive Soil Mapping with R</em>. Lulu.com.
 </div>
-<div id="ref-Ligges2008" class="csl-entry" role="listitem">
-Ligges, Uwe. 2008. <em>Programmieren mit <span>R</span></em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-540-79998-6">https://doi.org/10.1007/978-3-540-79998-6</a>.
 </div>
-<div id="ref-PerpinanLamigueiro2015" class="csl-entry" role="listitem">
-Perpiñán Lamigueiro, Óscar. 2015. <em>Displaying time series, spatial, and space-time data with R</em>. Chapman &amp; Hall/CRC the R series. Boca Raton, FL: CRC Press, Taylor &amp; Francis Group.
+</a>
 </div>
-<div id="ref-Wegmann2020" class="csl-entry" role="listitem">
-Wegmann, Martin. 2020. <em>An introduction to spatial data analysis: Remote sensing and GIS with open source software</em>. Herausgegeben von Jakob Schwalb-Willmann und Stefan Dech. Data in the wild series. Exeter: Pelagic Publishing.
+<div class="g-col-1" data-index="1" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589426" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
+<a href="./Lernmaterial/Installation/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Benötigtes Software Installieren
+</h5>
+<div class="card-text listing-description">
+Berechnungen von Informationen aus Vektoren.
 </div>
-<div id="ref-Wickham2009" class="csl-entry" role="listitem">
-Wickham, Hadley. 2009. <em>ggplot2</em>. Springer New York. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>.
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
 </div>
-</div></section></div></main> <!-- /main -->
+<div class="listing-date">
+19.08.2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589373" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
+<a href="./Lernmaterial/Dateien/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Verteilte Dateien
+</h5>
+<div class="card-text listing-description">
+Berechnungen von Informationen aus Vektoren.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
+</div>
+<div class="listing-date">
+19.08.2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589436" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="40">
+<a href="./Lernmaterial/Lesenswert/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./Lernmaterial/Lesenswert/logo-books.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lesenswert
+</h5>
+<div class="card-text listing-description">
+Hier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
+</div>
+<div class="listing-date">
+19.08.2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589437" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<a href="./Lernmaterial/Quellen/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Zusätzliche Datenquellen Online
+</h5>
+<div class="card-text listing-description">
+Berechnungen von Informationen aus Vektoren.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
+</div>
+<div class="listing-date">
+19.08.2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1724018400000" data-listing-file-modified-sort="1724403589437" data-listing-date-modified-sort="1724364000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<a href="./Lernmaterial/Projekt/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Abschlussprojekt
+</h5>
+<div class="card-text listing-description">
+Berechnungen von Informationen aus Vektoren.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Miguel Alvarez
+</div>
+<div class="listing-date">
+19.08.2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Keine Treffer
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
