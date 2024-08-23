@@ -1,0 +1,25 @@
+[
+  {
+    "listing": "/Lernmaterial.html",
+    "items": [
+      "/Lernmaterial/Foliensatz/index.html",
+      "/Lernmaterial/Installation/index.html",
+      "/Lernmaterial/Dateien/index.html",
+      "/Lernmaterial/Lesenswert/index.html",
+      "/Lernmaterial/Quellen/index.html",
+      "/Lernmaterial/Projekt/index.html"
+    ]
+  },
+  {
+    "listing": "/Sitzungen.html",
+    "items": [
+      "/Sitzungen/R-und-RStudio/index.html",
+      "/Sitzungen/Grundlagen-GIS/index.html",
+      "/Sitzungen/Vektoren/index.html",
+      "/Sitzungen/Rasters/index.html",
+      "/Sitzungen/Gelände/index.html",
+      "/Sitzungen/Modellen/index.html",
+      "/Sitzungen/Visualisierung/index.html"
+    ]
+  }
+]
