@@ -1,31 +1,10 @@
-image: alpine
-
-pages:
-  stage: deploy
-  # script:
-  #   - cp -r public/* public/.[^.]* "${CI_PAGES_DEPLOY_PATH}"
-  # script:
-  #   # Copy files, including hidden files, to the deployment path
-  #   - mkdir -p "${CI_PAGES_DEPLOY_PATH}"
-  #   - cp -r public/* "${CI_PAGES_DEPLOY_PATH}/"
-  #   # Ensure hidden files are also copied, but handle cases where there are none
-  #   - shopt -s dotglob nullglob
-  #   - cp -r public/.* "${CI_PAGES_DEPLOY_PATH}/" || true
-  artifacts:
-    paths:
-      - public
-  only:
-    - main  # or the branch you want to deploy from
-
-# stages:
+stages:
 #   - test
-#   - deploy
+  - deploy
 
-# before_script:
-#   - apt-get update
-#   - apt-get install -y --no-install-recommends build-essential \
-#     libcurl-dev
-# #  - R -e 'install.packages(c("biblio"))'
+before_script:
+  - apt-get update
+  - apt-get install -y --no-install-recommends build-essential 
 
 # # This job is only executed in feature branches, so it is possible to check the
 # # generated files via the job artefacts before a merge into the default branch.
@@ -39,12 +18,12 @@ pages:
 #   rules:
 #     - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
 
-# pages:
-#   image: registry.gitlab.com/kamapu/quarto-image:1.3.361-0
+pages:
+  image: registry.gitlab.com/kamapu/quarto-image:1.3.361-0
 #   script:
 #     - quarto render . --output-dir=public/
-#   artifacts:
-#     paths:
-#       - public/
-#   rules:
-#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  artifacts:
+    paths:
+      - public/
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
