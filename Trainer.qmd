@@ -1,5 +1,27 @@
 ---
 title: Trainer
+toc: false
 ---
 
-![](images/dalle-workers.jpg)
+# [Miguel Alvarez](https://kamapu.github.io/)
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- Vegetationsökologie
+- Geobotanik
+- Data-Science
+- Statistisches Programmieren mit R
+
+Langjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika.
+Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken.
+Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto.
+
+:::
+::: {.column width="30%"}
+
+![](images/profile-miguel.png)
+
+:::
+::::
+

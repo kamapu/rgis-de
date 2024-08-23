@@ -131,5 +131,19 @@
     "title": "Lesenswert",
     "section": "",
     "text": "Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst. Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.\n\n\n\n\nLiteratur\n\nBurrough, Peter A, und Rachael A McDonnell. 2016. Principles of geographical information systems. Oxford: Oxford University Press.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nHengl, Tomislav. 2009. A practical guide to geostatistical mapping of environmental variables. Amsterdam. https://publications.jrc.ec.europa.eu/repository/handle/JRC38153.\n\n\nHengl, Tomislav, und Robert A. MacMillan. 2018. Predictive Soil Mapping with R. Lulu.com.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nPerpiñán Lamigueiro, Óscar. 2015. Displaying time series, spatial, and space-time data with R. Chapman & Hall/CRC the R series. Boca Raton, FL: CRC Press, Taylor & Francis Group.\n\n\nWegmann, Martin. 2020. An introduction to spatial data analysis: Remote sensing and GIS with open source software. Herausgegeben von Jakob Schwalb-Willmann und Stefan Dech. Data in the wild series. Exeter: Pelagic Publishing.\n\n\nWickham, Hadley. 2009. ggplot2. Springer New York. https://ggplot2-book.org/."
+  },
+  {
+    "objectID": "Trainer.html",
+    "href": "Trainer.html",
+    "title": "Trainer",
+    "section": "",
+    "text": "Miguel Alvarez\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Auswertung von Umweltvariablen\nmit der statistischen\nProgrammiersprache R",
+    "section": "",
+    "text": "… ein Fall für die R Pakete sf und terra\n\nWillkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!\nIn diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.\nViel Spaß dabei!"
   }
 ]

@@ -1,6 +1,17 @@
 ---
-title: Navigation in the Ecological Space
+title: |
+  | Auswertung von Umweltvariablen
+  | mit der statistischen
+  | Programmiersprache R
 toc: false
 ---
 
-![](images/dalle-workers.jpg)
+*... ein Fall für die R Pakete `sf` und `terra`*
+
+![](images/cover-picture.jpg)
+
+Willkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!
+
+In diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.
+
+Viel Spaß dabei!
