@@ -3,7 +3,7 @@ title: "Lesenswert"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-image: logo-books.png
+image: consulted-books.jpg
 description:
   Hier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.
 draft: false
