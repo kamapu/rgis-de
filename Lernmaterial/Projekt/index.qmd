@@ -3,11 +3,54 @@ title: "Abschlussprojekt"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: student.jpg
 description:
   Berechnungen von Informationen aus Vektoren.
 draft: false
 ---
 
-Details für die Vorbereitung des Abschlussprotokoll.
 
+# Themen
+
+Die Themen sind frei wählbar.
+
+Hier einige Vorschläge:
+
+
+# Inhalt
+
+Der Inhalt des Dokuments sollte die folgenden Elemente enthalten:
+
+- Einleitung mit Erläuterung der Aufgabenstellung (warum oder wozu).
+- Beschreibung der Methoden, einschließlich der Quelle der verwendeten Daten.
+- Ergebnisse und Diskussion.
+- Schlussfolgerungen/Vorschläge.
+
+Die Arbeit basiert auf einer eigenen Datenanalyse und sollte wichtige Informationen durch Grafiken visualisieren.
+
+# Bestandteile der Arbeit
+
+Eine ZIP-Datei mit
+
+- Endbericht im Format .docx oder .odt, erstellt in MS-Office, OpenOffice oder LibreOffice.
+- Kommentierte R-Skripte mit den erforderlichen Eingabedaten.
+- Optional als RStudio-Projekt abgespeichert.
+
+# Kriterien
+
+Folgende Aspekte werden bei der Bewertung des Protokolls besonders berücksichtigt:
+
+- Klare Beschreibung der Problemstellung.
+- Nachvollziehbare Methoden.
+- Klare Erläuterung der Datenquellen.
+- Klare Abbildungen mit entsprechenden Titeln.
+- Funktionierendes Skript.
+
+# Weitere Vorschläge
+
+- Zitate sind nicht erforderlich, können aber als gute Praxis verwendet werden.
+- Die Länge der Arbeit ist nicht begrenzt, sollte aber berücksichtigt werden:
+  - Redundanzen können bestraft werden, d.h. Schritte oder Begründungen müssen einmal deutlich im Text auftauchen und nicht mehrfach.
+  - Zu knappe Beschreibungen bergen die Gefahr, dass wichtige Informationen unerwähnt bleiben.
+
+**Viel Erfolg!**
