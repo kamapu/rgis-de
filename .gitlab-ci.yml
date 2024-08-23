@@ -4,6 +4,13 @@ pages:
   stage: deploy
   script:
     - cp -r public/* public/.[^.]* "${CI_PAGES_DEPLOY_PATH}"
+  script:
+    # Copy files, including hidden files, to the deployment path
+    - mkdir -p "${CI_PAGES_DEPLOY_PATH}"
+    - cp -r public/* "${CI_PAGES_DEPLOY_PATH}/"
+    # Ensure hidden files are also copied, but handle cases where there are none
+    - shopt -s dotglob nullglob
+    - cp -r public/.* "${CI_PAGES_DEPLOY_PATH}/" || true
   artifacts:
     paths:
       - public
