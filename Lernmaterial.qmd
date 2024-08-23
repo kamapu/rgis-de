@@ -3,7 +3,7 @@ title: Lernmaterial
 listing:
   contents:
     - Lernmaterial/Foliensatz/index.qmd
-    - Lernmaterial/Installation/index.qmd
+    - Lernmaterial/Installieren/index.qmd
     - Lernmaterial/Dateien/index.qmd
     - Lernmaterial/Lesenswert/index.qmd
     - Lernmaterial/Quellen/index.qmd

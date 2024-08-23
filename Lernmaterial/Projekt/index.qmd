@@ -5,7 +5,7 @@ author: Miguel Alvarez
 date-modified: today
 image: student.jpg
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Vorgaben für den Abschlussprotokoll.
 draft: false
 ---
 

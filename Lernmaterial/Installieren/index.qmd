@@ -1,0 +1,71 @@
+---
+title: "R Installieren"
+date: '2024-08-19'
+author: Miguel Alvarez
+date-modified: today
+image: installing-r.png
+description:
+  Pfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.
+draft: false
+---
+
+# R und RStudio
+
+Obwohl die Software, die wir für den Kurs benötigen, bereits im CIP-Pool vorhanden ist, hier sind einige Hinweise, falls du auf deinem eigenen Computer üben möchtest.
+Die Arbeit in diesem Kurs konzentriert sich auf **R** und **RStudio**.
+
+[![](https://img.shields.io/badge/install-R-blue.svg)](https://cran.rstudio.com/)
+[![](https://img.shields.io/badge/install-RStudio-blue.svg)](https://posit.co/download/rstudio-desktop/)
+
+
+# R-Pakete
+
+Spezielle Aufgaben, wie sie bei GIS-Anwendungen anfallen, werden in R durch Erweiterungen zur Verfügung gestellt.
+Erweiterungen werden im R-Jargon **Pakete** (packages) genannt.
+Das offizielle Repository für R-Packages ist das Comprehensive R Archive Network, kurz [CRAN] (https://cran.rstudio.com/).
+Von dort können Pakete direkt in der laufenden Sitzung per Kommandozeile installiert werden.
+
+Für den Kurs kannst du [dieses Skript](install-packages.R) herunterladen und ausführen.
+Alternativ kannst du die folgenden Kommandozeilen kopieren und in deine Konsole einfügen.
+
+```{r}
+#| eval: false
+# Step 1: Update Pakages
+update.packages(ask = FALSE)
+
+# Step 2: Install missing requirements
+pkgs <- c("tidyr", "dplyr", "sf", "ggplot2", "terra", "stars", "osmdata",
+"leaflet",  "mapview", "geodata")
+
+missing_pkgs <- pkgs[!pkgs %in% installed.packages()]
+
+if(length(missing_pkgs))
+  install.packages(missing_pkgs)
+
+# Step 3: Cross-check
+missing_pkgs <- pkgs[!pkgs %in% installed.packages()]
+
+if(!length(missing_pkgs)) {
+  message("Success!")
+} else {
+   stop(paste0(c("Following packages were not installed:",
+     paste0("  - ", missing_pkgs)), collapse = "\n"))
+}
+```
+
+::: {.callout-tip}
+## Pakete laden nicht vergessen
+
+Die Tatsache, dass Pakete installiert sind, bedeutet nicht, dass sie direkt in der Sitzung verwendet werden können.
+Die Pakete müssen in die Session geladen werden.
+Dazu benutzt man in R die Funktion `library()`.
+:::
+
+
+# Optional
+
+Räumliche Daten können in **Google Earth** oder **QGIS** visualisiert werden.
+Dies ist jedoch kein obligatorischer Bestandteil des Kurses.
+
+[![](https://img.shields.io/badge/install-Google_Earth-blue.svg)](https://www.google.com/intl/de_in/earth/versions/#earth-pro)
+[![](https://img.shields.io/badge/install-QGIS-blue.svg)](https://qgis.org/download/)
