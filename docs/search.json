@@ -81,7 +81,7 @@
     "href": "Lernmaterial/Dateien/index.html",
     "title": "Verteilte Dateien",
     "section": "",
-    "text": "Beschreibung der verteilten Dateien\n\nQuelle\nInhalt/Format\nEinlesen\n\n\n\nGeländemodel\nhttps://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html"
+    "text": "Beschreibung der verteilten Dateien\n\nQuelle\nInhalt/Format\nEinlesen"
   },
   {
     "objectID": "Impressum.html",
@@ -145,5 +145,12 @@
     "title": "Lesenswert",
     "section": "",
     "text": "Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst. Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.\n\n\n\n\nLiteratur\n\nBurrough, Peter A, und Rachael A McDonnell. 2016. Principles of geographical information systems. Oxford: Oxford University Press.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nHengl, Tomislav. 2009. A practical guide to geostatistical mapping of environmental variables. Amsterdam. https://publications.jrc.ec.europa.eu/repository/handle/JRC38153.\n\n\nHengl, Tomislav, und Robert A. MacMillan. 2018. Predictive Soil Mapping with R. Lulu.com.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nPerpiñán Lamigueiro, Óscar. 2015. Displaying time series, spatial, and space-time data with R. Chapman & Hall/CRC the R series. Boca Raton, FL: CRC Press, Taylor & Francis Group.\n\n\nWegmann, Martin. 2020. An introduction to spatial data analysis: Remote sensing and GIS with open source software. Herausgegeben von Jakob Schwalb-Willmann und Stefan Dech. Data in the wild series. Exeter: Pelagic Publishing.\n\n\nWickham, Hadley. 2009. ggplot2. Springer New York. https://ggplot2-book.org/."
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#stadtbezirke-in-bochum",
+    "href": "Lernmaterial/Dateien/index.html#stadtbezirke-in-bochum",
+    "title": "Verteilte Dateien",
+    "section": "Stadtbezirke in Bochum",
+    "text": "Stadtbezirke in Bochum\nEin ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem Open Data Portal der Stadt Bochum.\n\nlibrary(sf)\nBochum &lt;- st_read(\"data/Stadtbezirke.shp\")\nplot(st_geometry(Bochum))"
   }
 ]

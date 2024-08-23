@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -129,7 +163,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#geländemodel" id="toc-geländemodel" class="nav-link active" data-scroll-target="#geländemodel">Geländemodel</a></li>
+  <li><a href="#dateien-herunterladen" id="toc-dateien-herunterladen" class="nav-link active" data-scroll-target="#dateien-herunterladen">Dateien Herunterladen</a></li>
+  <li><a href="#beschreibung-der-datensätzen" id="toc-beschreibung-der-datensätzen" class="nav-link" data-scroll-target="#beschreibung-der-datensätzen">Beschreibung der Datensätzen</a>
+  <ul class="collapse">
+  <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
+  </ul></li>
+  <li><a href="#geländemodel" id="toc-geländemodel" class="nav-link" data-scroll-target="#geländemodel">Geländemodel</a></li>
+  <li><a href="#soil-data" id="toc-soil-data" class="nav-link" data-scroll-target="#soil-data">Soil Data</a></li>
   </ul>
 </nav>
     </div>
@@ -178,6 +218,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dateien-herunterladen" class="level1">
+<h1>Dateien Herunterladen</h1>
 <ul>
 <li>Beschreibung der verteilten Dateien
 <ul>
@@ -186,9 +228,33 @@ ul.task-list li input[type="checkbox"] {
 <li>Einlesen</li>
 </ul></li>
 </ul>
+</section>
+<section id="beschreibung-der-datensätzen" class="level1">
+<h1>Beschreibung der Datensätzen</h1>
+<section id="stadtbezirke-in-bochum" class="level2">
+<h2 class="anchored" data-anchor-id="stadtbezirke-in-bochum">Stadtbezirke in Bochum</h2>
+<p>Ein ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem <a href="https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung">Open Data Portal der Stadt Bochum</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Bochum <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/Stadtbezirke.shp"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="geländemodel" class="level1">
 <h1>Geländemodel</h1>
 <p><a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html" class="uri">https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html</a></p>
+</section>
+<section id="soil-data" class="level1">
+<h1>Soil Data</h1>
+<p><a href="https://zenodo.org/records/8065170" class="uri">https://zenodo.org/records/8065170</a></p>
 
 
 </section>

@@ -9,13 +9,37 @@ description:
 draft: false
 ---
 
+# Dateien Herunterladen
+
 - Beschreibung der verteilten Dateien
   - Quelle
   - Inhalt/Format
   - Einlesen
+
+# Beschreibung der Datensätzen
+
+## Stadtbezirke in Bochum
+
+Ein ESRI-Shapefile mit den Stadtbezirken von Bochum.
+Die Datei stammt aus dem [Open Data Portal der Stadt Bochum](https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung).
+
+```{r}
+#| message: false
+#| results: 'hide'
+library(sf)
+Bochum <- st_read("data/Stadtbezirke.shp")
+plot(st_geometry(Bochum))
+```
+
 
 
 
 # Geländemodel
 
 <https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html>
+
+
+# Soil Data
+
+<https://zenodo.org/records/8065170>
+
