@@ -3,9 +3,8 @@ title: "Verteilte Dateien"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Beschreibung der Dateien, die für den Kurs verteilt werden.
 draft: false
 ---
 
@@ -18,10 +17,32 @@ draft: false
 
 # Beschreibung der Datensätzen
 
+## Bodenfeuchte Messungen
+
+Daten eines Sensornetzwerkes zur Messung von Bodenfeuchte und Bodeneigenschaften.
+Die Daten wurden im Hainich, Deutschland, im Rahmen des AquaDiva-Projekts erhoben.
+Die Daten wurden von [Zenodo](https://zenodo.org/records/8063928) heruntergeladen und geringfügig angepasst.
+Das Format ist in diesem Fall .csv (comma separated values) und beinhaltet Koordinaten in UTM Format.
+
+```{r}
+Boden <- read.csv("data/soil_properties.csv")
+head(Boden[ , 1:7])
+```
+
+Alternativ zu `read.csv()`, das ein Objekt **data.frame** erzeugt, dieser Datensatz kann direkt als **tibble** importiert werden.
+
+```{r}
+#| message: false
+library(readr)
+Boden <- read_csv("data/soil_properties.csv")
+Boden
+```
+
 ## Stadtbezirke in Bochum
 
 Ein ESRI-Shapefile mit den Stadtbezirken von Bochum.
 Die Datei stammt aus dem [Open Data Portal der Stadt Bochum](https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung).
+Der Inhalt der Attributtabelle wurde vereinfacht.
 
 ```{r}
 #| message: false

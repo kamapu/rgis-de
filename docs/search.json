@@ -28,60 +28,53 @@
     "text": "Text to Date and Vice Versa\nThe usual way of representing dates as text by R is in the format “YYYY-MM-DD”, for example 1 January 2000.\n\nnew_world &lt;- as.Date(\"2000-01-01\")\nclass(new_world)\n\n[1] \"Date\"\n\nnew_world\n\n[1] \"2000-01-01\"\n\n# Days since the change of Millenia\ndifftime(as.Date(Sys.Date()), new_world,)\n\nTime difference of 9001 days\n\n\n\n\n\n\n\n\nFormats for date and time in R\n\n\n\nTo convert dates and times from and to characters in R, there is a list of tags starting with the symbol “%”. The full list of tags can be found in the help for the strptime() function:\n\n# See the help documentation\n?strptime\n\nThe usual date format is represented by the string “%Y-%m-%d”.\n\n\nWe can use the strptime() function to convert strings to Date, declaring the appropriate formats.\n\n# Approximate Beethoven's birthday\nas.Date(strptime(\"17.12.1770\", format = \"%d.%m.%Y\"))\n\n[1] \"1770-12-17\"\n\n# Einstein's birthday (system must be set in English language)\nas.Date(strptime(\"14 March 1879\", format = \"%d %B %Y\"))\n\n[1] \"1879-03-14\"\n\n\nTo extract elements from a date vector, you can use the function format() for it. Note that the outputs will be always a character value, thus you may need to coerce numbers to integers.\n\n# Hypothetical birthday\nbd &lt;- \"15-06\"\n\n# Birthdays along 10 years\nbd &lt;- paste(bd, c(2025:2035), sep = \"-\")\n\n# Transform to Date\nbd &lt;- as.Date(strptime(bd, format = \"%d-%m-%Y\"))\n\n# Weekdays\nnext_birthdays &lt;- data.frame(\n  date = bd,\n  weekday = format(bd, format = \"%A\"))\nnext_birthdays\n\n         date   weekday\n1  2025-06-15    Sunday\n2  2026-06-15    Monday\n3  2027-06-15   Tuesday\n4  2028-06-15  Thursday\n5  2029-06-15    Friday\n6  2030-06-15  Saturday\n7  2031-06-15    Sunday\n8  2032-06-15   Tuesday\n9  2033-06-15 Wednesday\n10 2034-06-15  Thursday\n11 2035-06-15    Friday\n\n\n\n\n\n\n\n\nChanging Languages\n\n\n\n\n\nThe use of names for dates depends on the language set in your system. You may be able to change this setting on the fly.\n\n# Save the current locale\nlocale &lt;- Sys.getlocale(\"LC_TIME\")\n\n# Weekdays in German\nSys.setlocale(\"LC_TIME\", \"de_DE.UTF-8\")\n\n[1] \"de_DE.UTF-8\"\n\nformat(bd, format = \"%A\")\n\n [1] \"Sonntag\"    \"Montag\"     \"Dienstag\"   \"Donnerstag\" \"Freitag\"   \n [6] \"Samstag\"    \"Sonntag\"    \"Dienstag\"   \"Mittwoch\"   \"Donnerstag\"\n[11] \"Freitag\"   \n\n# Weekdays in Spanish\nSys.setlocale(\"LC_TIME\", \"es_ES.utf8\")\n\n[1] \"es_ES.utf8\"\n\nformat(bd, format = \"%A\")\n\n [1] \"domingo\"   \"lunes\"     \"martes\"    \"jueves\"    \"viernes\"   \"sábado\"   \n [7] \"domingo\"   \"martes\"    \"miércoles\" \"jueves\"    \"viernes\"  \n\n# Back to old locale\nSys.setlocale(\"LC_TIME\", locale)\n\n[1] \"en_GB.UTF-8\"\n\nformat(bd, format = \"%A\")\n\n [1] \"Sunday\"    \"Monday\"    \"Tuesday\"   \"Thursday\"  \"Friday\"    \"Saturday\" \n [7] \"Sunday\"    \"Tuesday\"   \"Wednesday\" \"Thursday\"  \"Friday\""
   },
   {
-    "objectID": "Sitzungen/Grundlagen-GIS/index.html",
-    "href": "Sitzungen/Grundlagen-GIS/index.html",
-    "title": "Grundlagen von GIS",
+    "objectID": "Lernmaterial/Lesenswert/index.html",
+    "href": "Lernmaterial/Lesenswert/index.html",
+    "title": "Lesenswert",
     "section": "",
-    "text": "Requirements\nDownloading the data from here.\n\ndownload.file(\n    url = \"https://kamapu.gitlab.io/coachingR/Topics/GIS/gis_data.zip\",\n    destfile = \"gis_data.zip\", method = \"curl\")\nunzip(\"gis_data.zip\", overwrite = TRUE)\nunlink(\"gis_data.zip\")\n\n\n\nExercise\nFollowing landscape elements are recognized in the raster dem_big.asc.\n\nOberrheingraben\nNeuwieder Becken\nOberen Mittelrhein\nUnteren Mittelrhein\nWesterwald\nEifel\nHunsrück\nTaunus\n\nPlot the DEM and add labels showing their respective positions."
+    "text": "Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst. Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.\n\n\n\n\nLiteratur\n\nBurrough, Peter A, und Rachael A McDonnell. 2016. Principles of geographical information systems. Oxford: Oxford University Press.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nHengl, Tomislav. 2009. A practical guide to geostatistical mapping of environmental variables. Amsterdam. https://publications.jrc.ec.europa.eu/repository/handle/JRC38153.\n\n\nHengl, Tomislav, und Robert A. MacMillan. 2018. Predictive Soil Mapping with R. Lulu.com.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nPerpiñán Lamigueiro, Óscar. 2015. Displaying time series, spatial, and space-time data with R. Chapman & Hall/CRC the R series. Boca Raton, FL: CRC Press, Taylor & Francis Group.\n\n\nWegmann, Martin. 2020. An introduction to spatial data analysis: Remote sensing and GIS with open source software. Herausgegeben von Jakob Schwalb-Willmann und Stefan Dech. Data in the wild series. Exeter: Pelagic Publishing.\n\n\nWickham, Hadley. 2009. ggplot2. Springer New York. https://ggplot2-book.org/."
   },
   {
-    "objectID": "Lernmaterial/Installieren/index.html",
-    "href": "Lernmaterial/Installieren/index.html",
-    "title": "R Installieren",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Auswertung von Umweltvariablen\nmit der statistischen\nProgrammiersprache R",
     "section": "",
-    "text": "R und RStudio\nObwohl die Software, die wir für den Kurs benötigen, bereits im CIP-Pool vorhanden ist, hier sind einige Hinweise, falls du auf deinem eigenen Computer üben möchtest. Die Arbeit in diesem Kurs konzentriert sich auf R und RStudio.\n \n\n\nR-Pakete\nSpezielle Aufgaben, wie sie bei GIS-Anwendungen anfallen, werden in R durch Erweiterungen zur Verfügung gestellt. Erweiterungen werden im R-Jargon Pakete (packages) genannt. Das offizielle Repository für R-Packages ist das Comprehensive R Archive Network, kurz [CRAN] (https://cran.rstudio.com/). Von dort können Pakete direkt in der laufenden Sitzung per Kommandozeile installiert werden.\nFür den Kurs kannst du dieses Skript herunterladen und ausführen. Alternativ kannst du die folgenden Kommandozeilen kopieren und in deine Konsole einfügen.\n\n# Step 1: Update Pakages\nupdate.packages(ask = FALSE)\n\n# Step 2: Install missing requirements\npkgs &lt;- c(\"tidyr\", \"dplyr\", \"sf\", \"ggplot2\", \"terra\", \"stars\", \"osmdata\",\n\"leaflet\",  \"mapview\", \"geodata\")\n\nmissing_pkgs &lt;- pkgs[!pkgs %in% installed.packages()]\n\nif(length(missing_pkgs))\n  install.packages(missing_pkgs)\n\n# Step 3: Cross-check\nmissing_pkgs &lt;- pkgs[!pkgs %in% installed.packages()]\n\nif(!length(missing_pkgs)) {\n  message(\"Success!\")\n} else {\n   stop(paste0(c(\"Following packages were not installed:\",\n     paste0(\"  - \", missing_pkgs)), collapse = \"\\n\"))\n}\n\n\n\n\n\n\n\nPakete laden nicht vergessen\n\n\n\nDie Tatsache, dass Pakete installiert sind, bedeutet nicht, dass sie direkt in der Sitzung verwendet werden können. Die Pakete müssen in die Session geladen werden. Dazu benutzt man in R die Funktion library().\n\n\n\n\nOptional\nRäumliche Daten können in Google Earth oder QGIS visualisiert werden. Dies ist jedoch kein obligatorischer Bestandteil des Kurses."
+    "text": "… ein Fall für die R Pakete sf und terra\n\nWillkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!\nIn diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.\nViel Spaß dabei!"
   },
   {
-    "objectID": "Trainer.html",
-    "href": "Trainer.html",
-    "title": "Trainer",
+    "objectID": "Sitzungen/Visualisierung/index.html",
+    "href": "Sitzungen/Visualisierung/index.html",
+    "title": "Visualisierung räumlicher Daten",
     "section": "",
-    "text": "Miguel Alvarez\n\n\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
+    "text": "ggplot (again)\nKarten\nleaflet?"
   },
   {
-    "objectID": "Sitzungen/Vektoren/index.html",
-    "href": "Sitzungen/Vektoren/index.html",
-    "title": "Auswertung von Geländemodellen",
+    "objectID": "Sitzungen/Rasters/index.html",
+    "href": "Sitzungen/Rasters/index.html",
+    "title": "Berechnungen in Raster-Datensätzen",
     "section": "",
-    "text": "Länge und Fläche\nDichte von Punkten\nEntfernung zu Objekten"
+    "text": "Klassifizieren\nAlgebra in Raster Datensätzen\nProjektionen"
   },
   {
-    "objectID": "Sitzungen/Modellen/index.html",
-    "href": "Sitzungen/Modellen/index.html",
-    "title": "Regressionsmodelle",
+    "objectID": "Sitzungen/Gelände/index.html",
+    "href": "Sitzungen/Gelände/index.html",
+    "title": "Arbeit mit Geländemodellen",
     "section": "",
-    "text": "Regression\nAutokorrelation"
+    "text": "TPI/TWI\nMoving Windows"
   },
   {
-    "objectID": "Sitzungen.html",
-    "href": "Sitzungen.html",
-    "title": "Sitzungen",
+    "objectID": "Lernmaterial/Quellen/index.html",
+    "href": "Lernmaterial/Quellen/index.html",
+    "title": "Zusätzliche Datenquellen Online",
     "section": "",
-    "text": "Einführung in R und RStudio\n\n\nCrash-Kurs in die Arbeit mit RStudio und Grundlagen von R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrundlagen von GIS\n\n\nEine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAuswertung von Geländemodellen\n\n\nBehandlung von Objekten, die als vektorielle Geometrien in GIS repräsentiert werden, mit Schwerpunkt auf dem Paket sf.\n\n\n\nMiguel Alvarez\n\n\n27.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBerechnungen in Raster-Datensätzen\n\n\nAuswertung und Berechnung in Rasterdatensätzen mit dem Paket terra.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArbeit mit Geländemodellen\n\n\nMethoden, die speziell für die Auswertung von Geländemodellen geeignet sind.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressionsmodelle\n\n\nEinschätzung von Korrelationen und Entwerfung von Regressionsmodellen.\n\n\n\nMiguel Alvarez\n\n\n29.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisierung räumlicher Daten\n\n\nWiederholung der Funktionen zur Darstellung geographischer und nicht-geographischer Informationen.\n\n\n\nMiguel Alvarez\n\n\n30.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Open Data Portal am Bundesamt für Kartographie und Geodäsie\nOpen Data Portal der Stadt Bochum\nPortal des Deutschen Wetter Dienstes"
   },
   {
-    "objectID": "Lernmaterial/Projekt/index.html",
-    "href": "Lernmaterial/Projekt/index.html",
-    "title": "Abschlussprojekt",
+    "objectID": "Lernmaterial/Foliensatz/index.html",
+    "href": "Lernmaterial/Foliensatz/index.html",
+    "title": "Foliensätze für den Kurs",
     "section": "",
-    "text": "Themen\nDie Themen sind frei wählbar.\nHier einige Vorschläge:\n\n\nInhalt\nDer Inhalt des Dokuments sollte die folgenden Elemente enthalten:\n\nEinleitung mit Erläuterung der Aufgabenstellung (warum oder wozu).\nBeschreibung der Methoden, einschließlich der Quelle der verwendeten Daten.\nErgebnisse und Diskussion.\nSchlussfolgerungen/Vorschläge.\n\nDie Arbeit basiert auf einer eigenen Datenanalyse und sollte wichtige Informationen durch Grafiken visualisieren.\n\n\nBestandteile der Arbeit\nEine ZIP-Datei mit\n\nEndbericht im Format .docx oder .odt, erstellt in MS-Office, OpenOffice oder LibreOffice.\nKommentierte R-Skripte mit den erforderlichen Eingabedaten.\nOptional als RStudio-Projekt abgespeichert.\n\n\n\nKriterien\nFolgende Aspekte werden bei der Bewertung des Protokolls besonders berücksichtigt:\n\nKlare Beschreibung der Problemstellung.\nNachvollziehbare Methoden.\nKlare Erläuterung der Datenquellen.\nKlare Abbildungen mit entsprechenden Titeln.\nFunktionierendes Skript.\n\n\n\nWeitere Vorschläge\n\nZitate sind nicht erforderlich, können aber als gute Praxis verwendet werden.\nDie Länge der Arbeit ist nicht begrenzt, sollte aber berücksichtigt werden:\n\nRedundanzen können bestraft werden, d.h. Schritte oder Begründungen müssen einmal deutlich im Text auftauchen und nicht mehrfach.\nZu knappe Beschreibungen bergen die Gefahr, dass wichtige Informationen unerwähnt bleiben.\n\n\nViel Erfolg!"
-  },
-  {
-    "objectID": "Lernmaterial/Dateien/index.html",
-    "href": "Lernmaterial/Dateien/index.html",
-    "title": "Verteilte Dateien",
-    "section": "",
-    "text": "Beschreibung der verteilten Dateien\n\nQuelle\nInhalt/Format\nEinlesen"
+    "text": "Foliensätze pro Sitzung"
   },
   {
     "objectID": "Impressum.html",
@@ -95,62 +88,76 @@
     "href": "Lernmaterial.html",
     "title": "Lernmaterial",
     "section": "",
-    "text": "Foliensätze für den Kurs\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Installieren\n\n\nPfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nVerteilte Dateien\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLesenswert\n\n\nHier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nZusätzliche Datenquellen Online\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbschlussprojekt\n\n\nVorgaben für den Abschlussprotokoll.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Foliensätze für den Kurs\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Installieren\n\n\nPfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nVerteilte Dateien\n\n\nBeschreibung der Dateien, die für den Kurs verteilt werden.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLesenswert\n\n\nHier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nZusätzliche Datenquellen Online\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbschlussprojekt\n\n\nVorgaben für den Abschlussprotokoll.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
   },
   {
-    "objectID": "Lernmaterial/Foliensatz/index.html",
-    "href": "Lernmaterial/Foliensatz/index.html",
-    "title": "Foliensätze für den Kurs",
+    "objectID": "Lernmaterial/Projekt/index.html",
+    "href": "Lernmaterial/Projekt/index.html",
+    "title": "Abschlussprojekt",
     "section": "",
-    "text": "Foliensätze pro Sitzung"
+    "text": "Themen\nDie Themen sind frei wählbar.\nHier einige Vorschläge:\n\n\nInhalt\nDer Inhalt des Dokuments sollte die folgenden Elemente enthalten:\n\nEinleitung mit Erläuterung der Aufgabenstellung (warum oder wozu).\nBeschreibung der Methoden, einschließlich der Quelle der verwendeten Daten.\nErgebnisse und Diskussion.\nSchlussfolgerungen/Vorschläge.\n\nDie Arbeit basiert auf einer eigenen Datenanalyse und sollte wichtige Informationen durch Grafiken visualisieren.\n\n\nBestandteile der Arbeit\nEine ZIP-Datei mit\n\nEndbericht im Format .docx oder .odt, erstellt in MS-Office, OpenOffice oder LibreOffice.\nKommentierte R-Skripte mit den erforderlichen Eingabedaten.\nOptional als RStudio-Projekt abgespeichert.\n\n\n\nKriterien\nFolgende Aspekte werden bei der Bewertung des Protokolls besonders berücksichtigt:\n\nKlare Beschreibung der Problemstellung.\nNachvollziehbare Methoden.\nKlare Erläuterung der Datenquellen.\nKlare Abbildungen mit entsprechenden Titeln.\nFunktionierendes Skript.\n\n\n\nWeitere Vorschläge\n\nZitate sind nicht erforderlich, können aber als gute Praxis verwendet werden.\nDie Länge der Arbeit ist nicht begrenzt, sollte aber berücksichtigt werden:\n\nRedundanzen können bestraft werden, d.h. Schritte oder Begründungen müssen einmal deutlich im Text auftauchen und nicht mehrfach.\nZu knappe Beschreibungen bergen die Gefahr, dass wichtige Informationen unerwähnt bleiben.\n\n\nViel Erfolg!"
   },
   {
-    "objectID": "Lernmaterial/Quellen/index.html",
-    "href": "Lernmaterial/Quellen/index.html",
-    "title": "Zusätzliche Datenquellen Online",
+    "objectID": "Sitzungen.html",
+    "href": "Sitzungen.html",
+    "title": "Sitzungen",
     "section": "",
-    "text": "Direktes Herunterladen\n\nOpen Data Portal am Bundesamt für Kartographie und Geodäsie\nOpen Data Portal der Stadt Bochum\nPortal des Deutschen Wetter Dienstes\n\n\n\nHerunterladen mit APIs oder Paketen\nOpen Street Map mit osmdata\n\nVignette: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html\nOSM map features: https://wiki.openstreetmap.org/wiki/Map_features#Building"
+    "text": "Einführung in R und RStudio\n\n\nCrash-Kurs in die Arbeit mit RStudio und Grundlagen von R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrundlagen von GIS\n\n\nEine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAuswertung von Geländemodellen\n\n\nBehandlung von Objekten, die als vektorielle Geometrien in GIS repräsentiert werden, mit Schwerpunkt auf dem Paket sf.\n\n\n\nMiguel Alvarez\n\n\n27.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBerechnungen in Raster-Datensätzen\n\n\nAuswertung und Berechnung in Rasterdatensätzen mit dem Paket terra.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArbeit mit Geländemodellen\n\n\nMethoden, die speziell für die Auswertung von Geländemodellen geeignet sind.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressionsmodelle\n\n\nEinschätzung von Korrelationen und Entwerfung von Regressionsmodellen.\n\n\n\nMiguel Alvarez\n\n\n29.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisierung räumlicher Daten\n\n\nWiederholung der Funktionen zur Darstellung geographischer und nicht-geographischer Informationen.\n\n\n\nMiguel Alvarez\n\n\n30.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
   },
   {
-    "objectID": "Sitzungen/Gelände/index.html",
-    "href": "Sitzungen/Gelände/index.html",
-    "title": "Arbeit mit Geländemodellen",
+    "objectID": "Sitzungen/Modellen/index.html",
+    "href": "Sitzungen/Modellen/index.html",
+    "title": "Regressionsmodelle",
     "section": "",
-    "text": "TPI/TWI\nMoving Windows"
+    "text": "Regression\nAutokorrelation"
   },
   {
-    "objectID": "Sitzungen/Rasters/index.html",
-    "href": "Sitzungen/Rasters/index.html",
-    "title": "Berechnungen in Raster-Datensätzen",
+    "objectID": "Sitzungen/Vektoren/index.html",
+    "href": "Sitzungen/Vektoren/index.html",
+    "title": "Auswertung von Geländemodellen",
     "section": "",
-    "text": "Klassifizieren\nAlgebra in Raster Datensätzen\nProjektionen"
+    "text": "Länge und Fläche\nDichte von Punkten\nEntfernung zu Objekten"
   },
   {
-    "objectID": "Sitzungen/Visualisierung/index.html",
-    "href": "Sitzungen/Visualisierung/index.html",
-    "title": "Visualisierung räumlicher Daten",
+    "objectID": "Trainer.html",
+    "href": "Trainer.html",
+    "title": "Trainer",
     "section": "",
-    "text": "ggplot (again)\nKarten\nleaflet?"
+    "text": "Miguel Alvarez\n\n\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Auswertung von Umweltvariablen\nmit der statistischen\nProgrammiersprache R",
+    "objectID": "Lernmaterial/Installieren/index.html",
+    "href": "Lernmaterial/Installieren/index.html",
+    "title": "R Installieren",
     "section": "",
-    "text": "… ein Fall für die R Pakete sf und terra\n\nWillkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!\nIn diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.\nViel Spaß dabei!"
+    "text": "R und RStudio\nObwohl die Software, die wir für den Kurs benötigen, bereits im CIP-Pool vorhanden ist, hier sind einige Hinweise, falls du auf deinem eigenen Computer üben möchtest. Die Arbeit in diesem Kurs konzentriert sich auf R und RStudio.\n \n\n\nR-Pakete\nSpezielle Aufgaben, wie sie bei GIS-Anwendungen anfallen, werden in R durch Erweiterungen zur Verfügung gestellt. Erweiterungen werden im R-Jargon Pakete (packages) genannt. Das offizielle Repository für R-Packages ist das Comprehensive R Archive Network, kurz [CRAN] (https://cran.rstudio.com/). Von dort können Pakete direkt in der laufenden Sitzung per Kommandozeile installiert werden.\nFür den Kurs kannst du dieses Skript herunterladen und ausführen. Alternativ kannst du die folgenden Kommandozeilen kopieren und in deine Konsole einfügen.\n\n# Step 1: Update Pakages\nupdate.packages(ask = FALSE)\n\n# Step 2: Install missing requirements\npkgs &lt;- c(\"tidyr\", \"dplyr\", \"sf\", \"ggplot2\", \"terra\", \"stars\", \"osmdata\",\n\"leaflet\",  \"mapview\", \"geodata\")\n\nmissing_pkgs &lt;- pkgs[!pkgs %in% installed.packages()]\n\nif(length(missing_pkgs))\n  install.packages(missing_pkgs)\n\n# Step 3: Cross-check\nmissing_pkgs &lt;- pkgs[!pkgs %in% installed.packages()]\n\nif(!length(missing_pkgs)) {\n  message(\"Success!\")\n} else {\n   stop(paste0(c(\"Following packages were not installed:\",\n     paste0(\"  - \", missing_pkgs)), collapse = \"\\n\"))\n}\n\n\n\n\n\n\n\nPakete laden nicht vergessen\n\n\n\nDie Tatsache, dass Pakete installiert sind, bedeutet nicht, dass sie direkt in der Sitzung verwendet werden können. Die Pakete müssen in die Session geladen werden. Dazu benutzt man in R die Funktion library().\n\n\n\n\nOptional\nRäumliche Daten können in Google Earth oder QGIS visualisiert werden. Dies ist jedoch kein obligatorischer Bestandteil des Kurses."
   },
   {
-    "objectID": "Lernmaterial/Lesenswert/index.html",
-    "href": "Lernmaterial/Lesenswert/index.html",
-    "title": "Lesenswert",
+    "objectID": "Sitzungen/Grundlagen-GIS/index.html",
+    "href": "Sitzungen/Grundlagen-GIS/index.html",
+    "title": "Grundlagen von GIS",
     "section": "",
-    "text": "Hier kommt eine Liste mit Literaturangaben, die du für die weitere Ausarbeitung des Themas nutzen kannst. Bitte beachte, dass einige der Quellen als HTML- oder PDF-Datei frei verfügbar sind.\n\n\n\n\nLiteratur\n\nBurrough, Peter A, und Rachael A McDonnell. 2016. Principles of geographical information systems. Oxford: Oxford University Press.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nHengl, Tomislav. 2009. A practical guide to geostatistical mapping of environmental variables. Amsterdam. https://publications.jrc.ec.europa.eu/repository/handle/JRC38153.\n\n\nHengl, Tomislav, und Robert A. MacMillan. 2018. Predictive Soil Mapping with R. Lulu.com.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nPerpiñán Lamigueiro, Óscar. 2015. Displaying time series, spatial, and space-time data with R. Chapman & Hall/CRC the R series. Boca Raton, FL: CRC Press, Taylor & Francis Group.\n\n\nWegmann, Martin. 2020. An introduction to spatial data analysis: Remote sensing and GIS with open source software. Herausgegeben von Jakob Schwalb-Willmann und Stefan Dech. Data in the wild series. Exeter: Pelagic Publishing.\n\n\nWickham, Hadley. 2009. ggplot2. Springer New York. https://ggplot2-book.org/."
+    "text": "Requirements\nDownloading the data from here.\n\ndownload.file(\n    url = \"https://kamapu.gitlab.io/coachingR/Topics/GIS/gis_data.zip\",\n    destfile = \"gis_data.zip\", method = \"curl\")\nunzip(\"gis_data.zip\", overwrite = TRUE)\nunlink(\"gis_data.zip\")\n\n\n\nExercise\nFollowing landscape elements are recognized in the raster dem_big.asc.\n\nOberrheingraben\nNeuwieder Becken\nOberen Mittelrhein\nUnteren Mittelrhein\nWesterwald\nEifel\nHunsrück\nTaunus\n\nPlot the DEM and add labels showing their respective positions."
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html",
+    "href": "Lernmaterial/Dateien/index.html",
+    "title": "Verteilte Dateien",
+    "section": "",
+    "text": "Beschreibung der verteilten Dateien\n\nQuelle\nInhalt/Format\nEinlesen"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#bodenfeuchte-messungen",
+    "href": "Lernmaterial/Dateien/index.html#bodenfeuchte-messungen",
+    "title": "Verteilte Dateien",
+    "section": "Bodenfeuchte Messungen",
+    "text": "Bodenfeuchte Messungen\nDaten eines Sensornetzwerkes zur Messung von Bodenfeuchte und Bodeneigenschaften. Die Daten wurden im Hainich, Deutschland, im Rahmen des AquaDiva-Projekts erhoben. Die Daten wurden von Zenodo heruntergeladen und geringfügig angepasst. Das Format ist in diesem Fall .csv (comma separated values) und beinhaltet Koordinaten in UTM Format.\n\nBoden &lt;- read.csv(\"data/soil_properties.csv\")\nhead(Boden[ , 1:7])\n\n  smmp_id depthpos node_id   x_smmp  y_smmp z_surface install_year\n1       3        b      76 598783.3 5662778    367.04         2014\n2       3        t      76 598783.3 5662778    367.04         2014\n3       6        b       8 598788.4 5662805    364.65         2014\n4       6        t       8 598788.4 5662805    364.65         2014\n5      10        b      76 598793.6 5662774    367.33         2014\n6      10        t      76 598793.6 5662774    367.33         2014\n\n\nAlternativ zu read.csv(), das ein Objekt data.frame erzeugt, dieser Datensatz kann direkt als tibble importiert werden.\n\nlibrary(readr)\nBoden &lt;- read_csv(\"data/soil_properties.csv\")\nBoden\n\n# A tibble: 420 × 24\n   smmp_id depthpos node_id  x_smmp   y_smmp z_surface install_year next_tree_id\n     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n 1       3 b             76 598783. 5662778.      367.         2014         1098\n 2       3 t             76 598783. 5662778.      367.         2014         1098\n 3       6 b              8 598788. 5662805.      365.         2014          102\n 4       6 t              8 598788. 5662805.      365.         2014          102\n 5      10 b             76 598794. 5662774.      367.         2014          171\n 6      10 t             76 598794. 5662774.      367.         2014          171\n 7      13 b              6 598796. 5662808.      364.         2014           26\n 8      13 t              6 598796. 5662808.      364.         2014           26\n 9      15 b             45 598804. 5662757.      369.         2014          243\n10      15 t             45 598804. 5662757.      369.         2014          243\n# ℹ 410 more rows\n# ℹ 16 more variables: next_tree_dist &lt;dbl&gt;, tree_pos &lt;chr&gt;, smmp_type &lt;chr&gt;,\n#   profiledepth_cm &lt;dbl&gt;, sampling_date_core &lt;chr&gt;, fc_vol_perc &lt;dbl&gt;,\n#   ks_m_s &lt;dbl&gt;, bulkdens_kg_m3 &lt;dbl&gt;, porosity_sat_vol_perc &lt;dbl&gt;,\n#   porosity_calc_vol_perc &lt;dbl&gt;, gravel_grav_perc &lt;dbl&gt;, sand_grav_perc &lt;dbl&gt;,\n#   silt_grav_perc &lt;dbl&gt;, clay_grav_perc &lt;dbl&gt;, textureclass &lt;chr&gt;,\n#   textureclass_ger &lt;chr&gt;"
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#stadtbezirke-in-bochum",
     "href": "Lernmaterial/Dateien/index.html#stadtbezirke-in-bochum",
     "title": "Verteilte Dateien",
     "section": "Stadtbezirke in Bochum",
-    "text": "Stadtbezirke in Bochum\nEin ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem Open Data Portal der Stadt Bochum.\n\nlibrary(sf)\nBochum &lt;- st_read(\"data/Stadtbezirke.shp\")\nplot(st_geometry(Bochum))"
+    "text": "Stadtbezirke in Bochum\nEin ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem Open Data Portal der Stadt Bochum. Der Inhalt der Attributtabelle wurde vereinfacht.\n\nlibrary(sf)\nBochum &lt;- st_read(\"data/Stadtbezirke.shp\")\nplot(st_geometry(Bochum))"
   }
 ]

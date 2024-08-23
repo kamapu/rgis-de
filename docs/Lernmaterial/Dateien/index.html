@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel Alvarez">
-<meta name="description" content="Berechnungen von Informationen aus Vektoren.">
+<meta name="description" content="Beschreibung der Dateien, die für den Kurs verteilt werden.">
 
 <title>Verteilte Dateien</title>
 <style>
@@ -166,6 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dateien-herunterladen" id="toc-dateien-herunterladen" class="nav-link active" data-scroll-target="#dateien-herunterladen">Dateien Herunterladen</a></li>
   <li><a href="#beschreibung-der-datensätzen" id="toc-beschreibung-der-datensätzen" class="nav-link" data-scroll-target="#beschreibung-der-datensätzen">Beschreibung der Datensätzen</a>
   <ul class="collapse">
+  <li><a href="#bodenfeuchte-messungen" id="toc-bodenfeuchte-messungen" class="nav-link" data-scroll-target="#bodenfeuchte-messungen">Bodenfeuchte Messungen</a></li>
   <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
   </ul></li>
   <li><a href="#geländemodel" id="toc-geländemodel" class="nav-link" data-scroll-target="#geländemodel">Geländemodel</a></li>
@@ -183,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Berechnungen von Informationen aus Vektoren.
+    Beschreibung der Dateien, die für den Kurs verteilt werden.
   </div>
 </div>
 
@@ -231,17 +232,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="beschreibung-der-datensätzen" class="level1">
 <h1>Beschreibung der Datensätzen</h1>
+<section id="bodenfeuchte-messungen" class="level2">
+<h2 class="anchored" data-anchor-id="bodenfeuchte-messungen">Bodenfeuchte Messungen</h2>
+<p>Daten eines Sensornetzwerkes zur Messung von Bodenfeuchte und Bodeneigenschaften. Die Daten wurden im Hainich, Deutschland, im Rahmen des AquaDiva-Projekts erhoben. Die Daten wurden von <a href="https://zenodo.org/records/8063928">Zenodo</a> heruntergeladen und geringfügig angepasst. Das Format ist in diesem Fall .csv (comma separated values) und beinhaltet Koordinaten in UTM Format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/soil_properties.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Boden[ , <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  smmp_id depthpos node_id   x_smmp  y_smmp z_surface install_year
+1       3        b      76 598783.3 5662778    367.04         2014
+2       3        t      76 598783.3 5662778    367.04         2014
+3       6        b       8 598788.4 5662805    364.65         2014
+4       6        t       8 598788.4 5662805    364.65         2014
+5      10        b      76 598793.6 5662774    367.33         2014
+6      10        t      76 598793.6 5662774    367.33         2014</code></pre>
+</div>
+</div>
+<p>Alternativ zu <code>read.csv()</code>, das ein Objekt <strong>data.frame</strong> erzeugt, dieser Datensatz kann direkt als <strong>tibble</strong> importiert werden.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/soil_properties.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Boden</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 420 × 24
+   smmp_id depthpos node_id  x_smmp   y_smmp z_surface install_year next_tree_id
+     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+ 1       3 b             76 598783. 5662778.      367.         2014         1098
+ 2       3 t             76 598783. 5662778.      367.         2014         1098
+ 3       6 b              8 598788. 5662805.      365.         2014          102
+ 4       6 t              8 598788. 5662805.      365.         2014          102
+ 5      10 b             76 598794. 5662774.      367.         2014          171
+ 6      10 t             76 598794. 5662774.      367.         2014          171
+ 7      13 b              6 598796. 5662808.      364.         2014           26
+ 8      13 t              6 598796. 5662808.      364.         2014           26
+ 9      15 b             45 598804. 5662757.      369.         2014          243
+10      15 t             45 598804. 5662757.      369.         2014          243
+# ℹ 410 more rows
+# ℹ 16 more variables: next_tree_dist &lt;dbl&gt;, tree_pos &lt;chr&gt;, smmp_type &lt;chr&gt;,
+#   profiledepth_cm &lt;dbl&gt;, sampling_date_core &lt;chr&gt;, fc_vol_perc &lt;dbl&gt;,
+#   ks_m_s &lt;dbl&gt;, bulkdens_kg_m3 &lt;dbl&gt;, porosity_sat_vol_perc &lt;dbl&gt;,
+#   porosity_calc_vol_perc &lt;dbl&gt;, gravel_grav_perc &lt;dbl&gt;, sand_grav_perc &lt;dbl&gt;,
+#   silt_grav_perc &lt;dbl&gt;, clay_grav_perc &lt;dbl&gt;, textureclass &lt;chr&gt;,
+#   textureclass_ger &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
 <section id="stadtbezirke-in-bochum" class="level2">
 <h2 class="anchored" data-anchor-id="stadtbezirke-in-bochum">Stadtbezirke in Bochum</h2>
-<p>Ein ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem <a href="https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung">Open Data Portal der Stadt Bochum</a>.</p>
+<p>Ein ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem <a href="https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung">Open Data Portal der Stadt Bochum</a>. Der Inhalt der Attributtabelle wurde vereinfacht.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Bochum <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/Stadtbezirke.shp"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Bochum <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/Stadtbezirke.shp"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
