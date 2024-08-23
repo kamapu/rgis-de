@@ -6,7 +6,9 @@ before_script:
   - apt-get update
   - apt-get install -y --no-install-recommends build-essential
   - apt-get update && apt-get install -qy \
-      libcurl4-openssl-dev \
+      openssl \
+      libssl-dev \
+      curl \
       libxml2-dev
   - R -e 'install.packages(c("biblio"))'
 
