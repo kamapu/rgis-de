@@ -37,7 +37,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Auswertung von Umweltvariablen\nmit der statistischen\nProgrammiersprache R",
+    "title": "Auswertung von Umweltvariablen | mit der statistischen | Programmiersprache R",
     "section": "",
     "text": "… ein Fall für die R Pakete sf und terra\n\nWillkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!\nIn diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.\nViel Spaß dabei!"
   },
@@ -67,7 +67,7 @@
     "href": "Lernmaterial/Quellen/index.html",
     "title": "Zusätzliche Datenquellen Online",
     "section": "",
-    "text": "Open Data Portal am Bundesamt für Kartographie und Geodäsie\nOpen Data Portal der Stadt Bochum\nPortal des Deutschen Wetter Dienstes"
+    "text": "Open Data Portal am Bundesamt für Kartographie und Geodäsie\nOpen Data Portal der Stadt Bochum\nPortal des Deutschen Wetter Dienstes\n\nhttps://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/home"
   },
   {
     "objectID": "Lernmaterial/Foliensatz/index.html",
@@ -88,7 +88,7 @@
     "href": "Lernmaterial.html",
     "title": "Lernmaterial",
     "section": "",
-    "text": "Foliensätze für den Kurs\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Installieren\n\n\nPfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nVerteilte Dateien\n\n\nBeschreibung der Dateien, die für den Kurs verteilt werden.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLesenswert\n\n\nHier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\nZusätzliche Datenquellen Online\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbschlussprojekt\n\n\nVorgaben für den Abschlussprotokoll.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Foliensätze für den Kurs\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Installieren\n\n\nPfade und Hinweise, um das benötigste Software im persönlichen Rechner zu installieren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVerteilte Dateien\n\n\nBeschreibung der Dateien, die für den Kurs verteilt werden.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLesenswert\n\n\nHier sind ein paar Vorschläge, mit denen du dein Wissen vertiefen kannst.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZusätzliche Datenquellen Online\n\n\nBerechnungen von Informationen aus Vektoren.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbschlussprojekt\n\n\nVorgaben für den Abschlussprotokoll.\n\n\n\nMiguel Alvarez\n\n\n19.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
   },
   {
     "objectID": "Lernmaterial/Projekt/index.html",
@@ -159,5 +159,19 @@
     "title": "Verteilte Dateien",
     "section": "Stadtbezirke in Bochum",
     "text": "Stadtbezirke in Bochum\nEin ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem Open Data Portal der Stadt Bochum. Der Inhalt der Attributtabelle wurde vereinfacht.\n\nlibrary(sf)\nBochum &lt;- st_read(\"data/Stadtbezirke.shp\")\nplot(st_geometry(Bochum))"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#straßennetz-in-bochum",
+    "href": "Lernmaterial/Dateien/index.html#straßennetz-in-bochum",
+    "title": "Verteilte Dateien",
+    "section": "Straßennetz in Bochum",
+    "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"type\"])"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#geländemodel-dgm200m",
+    "href": "Lernmaterial/Dateien/index.html#geländemodel-dgm200m",
+    "title": "Verteilte Dateien",
+    "section": "Geländemodel DGM200m",
+    "text": "Geländemodel DGM200m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-200m.tif\")\nplot(DGM)"
   }
 ]

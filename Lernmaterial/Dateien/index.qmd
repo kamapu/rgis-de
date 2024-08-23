@@ -3,6 +3,7 @@ title: "Verteilte Dateien"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
+image: bochum-roads.png
 description:
   Beschreibung der Dateien, die für den Kurs verteilt werden.
 draft: false
@@ -53,14 +54,29 @@ plot(st_geometry(Bochum))
 ```
 
 
+## Straßennetz in Bochum
 
+Straßennetz von Bochum aus Open Street Maps.
+Dieser Datensatz wurde mit Hilfe des Paketes `osmdata` (siehe [dieses Tutorial](https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html)) direkt in R heruntergeladen und als `sf`-Objekt in einer rds-Datei gespeichert.
 
-# Geländemodel
+```{r}
+library(sf)
+#library(ggplot2)
+Bochum_str <- readRDS("data/roads.rds")
+plot(Bochum_str["type"])
+```
 
-<https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html>
+## Geländemodel DGM200m
 
+Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m.
+Das Modell stammt aus dem [Portal des Bundesamtes für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html) und wurde aus der Umgebung von Bochum ausgeschnitten.
+Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.
 
-# Soil Data
+```{r}
+#| message: false
+library(terra)
+DGM <- rast("data/dgm-200m.tif")
+plot(DGM)
+```
 
-<https://zenodo.org/records/8065170>
 

@@ -168,9 +168,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#bodenfeuchte-messungen" id="toc-bodenfeuchte-messungen" class="nav-link" data-scroll-target="#bodenfeuchte-messungen">Bodenfeuchte Messungen</a></li>
   <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
+  <li><a href="#straßennetz-in-bochum" id="toc-straßennetz-in-bochum" class="nav-link" data-scroll-target="#straßennetz-in-bochum">Straßennetz in Bochum</a></li>
+  <li><a href="#geländemodel-dgm200m" id="toc-geländemodel-dgm200m" class="nav-link" data-scroll-target="#geländemodel-dgm200m">Geländemodel DGM200m</a></li>
   </ul></li>
-  <li><a href="#geländemodel" id="toc-geländemodel" class="nav-link" data-scroll-target="#geländemodel">Geländemodel</a></li>
-  <li><a href="#soil-data" id="toc-soil-data" class="nav-link" data-scroll-target="#soil-data">Soil Data</a></li>
   </ul>
 </nav>
     </div>
@@ -293,16 +293,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="straßennetz-in-bochum" class="level2">
+<h2 class="anchored" data-anchor-id="straßennetz-in-bochum">Straßennetz in Bochum</h2>
+<p>Straßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes <code>osmdata</code> (siehe <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html">dieses Tutorial</a>) direkt in R heruntergeladen und als <code>sf</code>-Objekt in einer rds-Datei gespeichert.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Bochum_str <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/roads.rds"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Bochum_str[<span class="st">"type"</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="geländemodel" class="level1">
-<h1>Geländemodel</h1>
-<p><a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html" class="uri">https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html</a></p>
-</section>
-<section id="soil-data" class="level1">
-<h1>Soil Data</h1>
-<p><a href="https://zenodo.org/records/8065170" class="uri">https://zenodo.org/records/8065170</a></p>
+<section id="geländemodel-dgm200m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
