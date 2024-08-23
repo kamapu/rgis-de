@@ -5,6 +5,9 @@ stages:
 before_script:
   - apt-get update
   - apt-get install -y --no-install-recommends build-essential
+  - apt-get install -qy\
+      libcurl4-openssl-dev\
+      libxml2-dev
   - R -e 'install.packages(c("biblio"))'
 
 # This job is only executed in feature branches, so it is possible to check the
