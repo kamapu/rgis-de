@@ -72,11 +72,24 @@ Dieser Datensatz ist ebenfalls mit `osmdata` für Bochum heruntergeladen.
 
 ```{r}
 library(sf)
-#library(ggplot2)
 Bochum_krh <- readRDS("data/hospitals.rds")
 plot(st_geometry(Bochum_krh), col = "red", border = "red")
 ```
 
+
+## Biomasse von Wäldern
+
+Dieser Datensatz stellt die oberirdische Biomasse der Wälder (AGBD für above-ground biomass density) für den Raum Bochum dar.
+Die Datei ist im GeoTiff-Format gespeichert und wurde ursprünglich aus dem [Katalog der Geodateninfrastruktur Deutschland](https://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/metadata/a3c5b57f-8d87-42d2-a3b2-8f5a230964ae) heruntergeladen.
+Aufgrund der Größe wurde diese Datei in Kacheln (Tiles) aufgeteilt.
+
+```{r}
+#| message: false
+library(terra)
+t_names <- paste0("agbd-2022-tile", c(1:4), ".tif")
+Biomasse <- vrt(file.path("data", t_names))
+plot(Biomasse)
+```
 
 
 ## Geländemodel DGM200m

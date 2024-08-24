@@ -243,7 +243,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Geändert</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">23. August 2024</p>
+      <p class="date-modified">24. August 2024</p>
     </div>
   </div>
     
@@ -476,7 +476,7 @@ Euler’s Identity
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(performance)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  high    low medium 
-    31     34     35 </code></pre>
+    31     36     33 </code></pre>
 </div>
 </div>
 <p>In the previous case, the levels are sorted according to their alphabetical order, but this may not make sense, so we need to specify the levels (classes) for the categorical variable beforehand.</p>
@@ -490,7 +490,7 @@ Euler’s Identity
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(performance)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   low medium   high 
-    34     35     31 </code></pre>
+    36     33     31 </code></pre>
 </div>
 </div>
 <p>Ordinal variables are a special case of categorical variables. In this case, levels (classes) represent a hierarchy within a scale, but not in a metric sense. Such variables are represented by the <code>ordered</code> class, which is similar to <code>factor</code> but allows some additional operations.</p>
@@ -517,12 +517,12 @@ Euler’s Identity
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Today's date</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="fu">Sys.Date</span>())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-08-23"</code></pre>
+<pre><code>[1] "2024-08-24"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Days since them</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">difftime</span>(<span class="fu">as.Date</span>(<span class="fu">Sys.Date</span>()), <span class="fu">as.Date</span>(<span class="dv">0</span>, <span class="at">origin =</span> <span class="st">"1970-01-01"</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 19958 days</code></pre>
+<pre><code>Time difference of 19959 days</code></pre>
 </div>
 </div>
 <!--
@@ -544,7 +544,7 @@ Note that the behaviour of `as.Date(0)` may be different in new R versions.
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Days since the change of Millenia</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">difftime</span>(<span class="fu">as.Date</span>(<span class="fu">Sys.Date</span>()), new_world,)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9001 days</code></pre>
+<pre><code>Time difference of 9002 days</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -669,7 +669,7 @@ Changing Languages
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-08-23 23:02:43 CEST"</code></pre>
+<pre><code>[1] "2024-08-24 12:26:44 CEST"</code></pre>
 </div>
 </div>
 <p>Here we recognise the date as part of the information, including the time (hours, minutes and seconds) and the time zone.</p>

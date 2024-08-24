@@ -170,6 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
   <li><a href="#straßennetz-in-bochum" id="toc-straßennetz-in-bochum" class="nav-link" data-scroll-target="#straßennetz-in-bochum">Straßennetz in Bochum</a></li>
   <li><a href="#krankenhäuser" id="toc-krankenhäuser" class="nav-link" data-scroll-target="#krankenhäuser">Krankenhäuser</a></li>
+  <li><a href="#biomasse-von-wäldern" id="toc-biomasse-von-wäldern" class="nav-link" data-scroll-target="#biomasse-von-wäldern">Biomasse von Wäldern</a></li>
   <li><a href="#geländemodel-dgm200m" id="toc-geländemodel-dgm200m" class="nav-link" data-scroll-target="#geländemodel-dgm200m">Geländemodel DGM200m</a></li>
   <li><a href="#geländemodel-dgm1000m" id="toc-geländemodel-dgm1000m" class="nav-link" data-scroll-target="#geländemodel-dgm1000m">Geländemodel DGM1000m</a></li>
   </ul></li>
@@ -210,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Geändert</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">23. August 2024</p>
+      <p class="date-modified">24. August 2024</p>
     </div>
   </div>
     
@@ -317,9 +318,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dieser Datensatz ist ebenfalls mit <code>osmdata</code> für Bochum heruntergeladen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Bochum_krh <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/hospitals.rds"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum_krh), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Bochum_krh <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/hospitals.rds"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum_krh), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -329,13 +329,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geländemodel-dgm200m" class="level2">
-<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
-<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
+<section id="biomasse-von-wäldern" class="level2">
+<h2 class="anchored" data-anchor-id="biomasse-von-wäldern">Biomasse von Wäldern</h2>
+<p>Dieser Datensatz stellt die oberirdische Biomasse der Wälder (AGBD für above-ground biomass density) für den Raum Bochum dar. Die Datei ist im GeoTiff-Format gespeichert und wurde ursprünglich aus dem <a href="https://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/metadata/a3c5b57f-8d87-42d2-a3b2-8f5a230964ae">Katalog der Geodateninfrastruktur Deutschland</a> heruntergeladen. Aufgrund der Größe wurde diese Datei in Kacheln (Tiles) aufgeteilt.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>t_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"agbd-2022-tile"</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="st">".tif"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Biomasse <span class="ot">&lt;-</span> <span class="fu">vrt</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, t_names))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Biomasse)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -345,18 +346,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geländemodel-dgm1000m" class="level2">
-<h2 class="anchored" data-anchor-id="geländemodel-dgm1000m">Geländemodel DGM1000m</h2>
-<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S">Portal des Bundesamtes für Kartographie und Geodäsie</a>. Diese Datei liegt im ASCII-Format vor.</p>
+<section id="geländemodel-dgm200m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-1000m.asc"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(DGM) <span class="ot">&lt;-</span> <span class="st">"epsg:25832"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geländemodel-dgm1000m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm1000m">Geländemodel DGM1000m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S">Portal des Bundesamtes für Kartographie und Geodäsie</a>. Diese Datei liegt im ASCII-Format vor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-1000m.asc"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(DGM) <span class="ot">&lt;-</span> <span class="st">"epsg:25832"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
