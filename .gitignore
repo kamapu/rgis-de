@@ -8,4 +8,4 @@
 
 # Quarto files and extensions
 /.quarto/
-#**/*_extensions
+**/*_extensions

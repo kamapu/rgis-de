@@ -1,0 +1,137 @@
+---
+title: Kurze Einführung in GIS
+author: Miguel Alvarez
+date: 2024-08-27
+format:
+  kamapu-beamer:
+    titleimage: images/pirat-ship-cover.jpg
+    titlecol: ffff00
+---
+
+# GIS
+
+\small
+
+Räumliche Daten (Digital):
+
+- Erfassung
+- Bearbeitung
+- Organisation
+- Analyse
+- Visualisieren
+
+\vspace{0.5cm}
+
+**1965** Erster Einsatz durch das Department of Forestry and Rural Development in Ottawa (Kanada)
+
+**1980er** Erste kommerziellen Anbieter (z.B. [ESRI](https://www.esri.com/)), im paralell das Freeware [GRASS GIS](https://grass.osgeo.org/) 
+
+
+# Raster- und Vektorendaten
+
+**Rasterdaten**
+
+- Geländemodelle
+- Satellitenbildern
+- Räumliche Modelle
+
+\vspace{1cm}
+
+![](images/GISrasterlayer.png){width="10%"}
+![](images/GISraster.png){width="10%"}
+
+\vspace{0.5cm}
+
+\scriptsize
+
+Bild links: [Rafael H. M. Pereira](https://social.cologne/@UrbanDemog@datasci.social)
+
+\sidepic{images/map_layers.png}
+
+# Raster- und Vektorendaten
+
+- Geometrien und Attribute
+  - Punkte
+  - Linien
+  - Polygone
+
+\vspace{1cm}
+
+![](images/GISpoints.png){width="10%"}&nbsp;&nbsp;&nbsp;
+![](images/GISlines.png){width="10%"}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![](images/GISpolygons.png){width="10%"}
+
+\sidepic{images/bonn-map.png}
+
+# Koordinatensreferenzsysteme
+
+- Geographische Koordinaten
+  - WGS 84
+- Projizierte Koordinaten
+  - UTM
+
+\sidepic{images/utm-zone-28.png}
+
+# Koordinatensreferenzsysteme
+
+**European Petroleum Survey Group Geodesy** (EPSG)\
+(1986--2005)
+
+\vspace{0.5cm}
+
+SRID (Spatial Reference Identifier, siehe [EPSG.io](https://epsg.io/))
+
+\small
+
+|   |      |     |
+| - | ---- | --- |
+| **4326** | WGS 84 / Geographische Koordinaten | GPS-Geräte |
+| **25832** | ETRS89 / UTM Zone 32N | Westliches und Mittel Deutschland |
+| **25833** | ETRS89 / UTM Zone 33N | Östliches Deutschland |
+| **3857** | WGS 84 / Pseudo-Mercator | Google Maps, OpenStreetMaps, weitere Karten im Netz |
+
+# Dateienformate
+
+\vspace{0.5cm}
+
+Diverse Alternativen
+
+\vspace{0.5cm}
+
+|   |     |
+| -- | ---- |
+| Rasterdaten | ASCII (Text), geoTiff, jpeg, usw. |
+| Vektorendaten | ESRI Shapefiles, KML (Keyhole Markup Language), GPX (GPS Exchange Format), geojson, usw. |
+| Datenbanksysteme | PostGIS (PostgreSQL), Oracle Spatial, SpatiaLite (SQLite) |
+
+
+# R Pakete
+
+Siehe [r-spatial](https://r-spatial.org/)
+
+
+- [`sf`](https://r-spatial.github.io/sf/) (anstelle von `sp`)
+- [`terra`](https://rspatial.github.io/terra/reference/terra-package.html) (anstelle von `raster`)
+- [`rpostgis`](http://cidree.github.io/rpostgis/)
+- usw.
+
+\sidepic{images/bonn-pop-map.png}
+
+# JavaScript Widgets
+
+- [`leaflet`](http://rstudio.github.io/leaflet/)
+- [`mapview`](https://r-spatial.github.io/mapview/)
+
+\sidepic{images/bonn-mapview.jpg}
+
+# Vielen Dank!
+
+\vspace{5cm}
+
+\small
+
+Cover und kunstvolle Bilder\
+wurden mit [Image Creator](https://www.bing.com/images/) erstellt.
+
+
+\sidepic{images/pirat-ship-closure.jpg}

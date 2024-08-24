@@ -1,0 +1,525 @@
+---
+title: "see-preamble"
+subtitle: "[Termine 7 & 8]"
+author: "see-preamble"
+date: "28. & 30. März 2023"
+output:
+  beamer_presentation:
+    theme: Berkeley
+    fonttheme: structurebold
+    slide_level: 2
+header-includes: |
+  ```{=latex}
+  % Display margins in document
+  %\usepackage{showframe}
+  
+  % No section slides
+  \AtBeginSection[]{}
+  
+  % Add a logo
+  \pgfdeclareimage[height=1.5cm]{logo}{images/logo-vhs.png}
+  \logo{\pgfuseimage{logo}}
+  
+  % Customized URL and hyperlinks
+  \newcommand{\urlm}[2][blue]{\textcolor{#1}{\url{#2}}}
+  \newcommand{\hrefm}[3][blue]{\textcolor{#1}{\href{#2}{#3}}}
+  
+  % Enable overlayed text boxes
+  \usepackage[overlay]{textpos}
+  
+  % Optimize columns call ------------------------------------------------------
+  \def\begincols{\begin{columns}}
+  \def\begincol{\begin{column}}
+  \def\endcol{\end{column}}
+  \def\endcols{\end{columns}}
+  
+  % Set colors -----------------------------------------------------------------
+  
+  % Define Kenian colors
+  \definecolor{vhsorange}{HTML}{eb640f}
+  \definecolor{vhsyellow}{HTML}{fab90f}
+  \definecolor{vhsdarkblue}{HTML}{00285a}
+  \definecolor{vhslightblue}{HTML}{64b9e6}
+  \definecolor{vhsblue}{HTML}{1e73af}
+  \definecolor{vhsred}{HTML}{e1000f}
+  \definecolor{mygrey}{RGB}{155,155,155}
+  
+  % Set palette
+  
+  % Title box at title slide
+  \setbeamercolor{palette primary}{fg=white,bg=vhsred}
+  % Logo box at the top-left corner
+  \setbeamercolor{palette secondary}{fg=white,bg=white}
+  % Top bar with section/sub-section title
+  \setbeamercolor{frametitle}{fg=white,bg=vhsblue}
+  % Active section in navigation bar
+  \setbeamercolor{palette sidebar secondary}{fg=vhsred,bg=white}
+  \setbeamercolor{section in sidebar shaded}{fg=mygrey}
+  % Title color in sidebar
+  \setbeamercolor{title in sidebar}{fg=white}
+  % Authors name color in sidebar
+  \setbeamercolor{author in sidebar}{fg=vhsyellow}
+  % Section color in sidebar
+  %\setbeamercolor{palette sidebar secondary}{fg=yellow}
+  
+  % Layout for sidebar
+  \makeatletter
+  \setbeamertemplate{sidebar canvas left}[vertical shading][
+  top=vhsdarkblue,bottom=vhsdarkblue]
+  \makeatother
+  
+  % Numbering slides
+  \setbeamertemplate{footline}[frame number]
+  
+  % Itemized lists -------------------------------------------------------------
+  \setbeamertemplate{itemize item}[triangle]
+  %\setbeamercolor{itemize item}{fg=vhsorange}
+  \setbeamercolor{itemize item}{fg=vhslightblue}
+
+  \setbeamertemplate{itemize subitem}[triangle]
+  %\setbeamercolor{itemize subitem}{fg=vhslightblue}
+  \setbeamercolor{itemize subitem}{fg=vhsorange}
+  
+  \setlength{\leftmargini}{0.5cm}
+  \setlength{\leftmarginii}{0.3cm}
+  
+  % Title and author -----------------------------------------------------------
+  
+  % Customized long and short author
+  \AtBeginDocument{\author[M Alvarez]{Miguel Alvarez}}
+  
+  % Customized long and short title
+  \AtBeginDocument{\title[R \& RStudio]{%
+  Einführung in R und RStudio}}
+  
+  % New commands ---------------------------------------------------------------
+  \newcommand{\myurl}[1]{{\color{blue} \url{#1}}}
+  \newcommand{\myhref}[2]{{\color{blue} \href{#1}{#2}}}
+  ```
+classoption:
+  - aspectratio=169
+  - t
+---
+
+```{r preamble, echo = FALSE, message = FALSE}
+library(knitr)
+
+# Set chunk options
+opts_chunk$set(
+    out.width = "\\textwidth",
+    fig.align = "center",
+    fig.asp = 0.94,
+    fig.width = 6)
+
+# Import data
+Bonn <- readRDS("../data/BonnBevoelkerung.rds")
+Bezirke <- readRDS("../data/BonnBezirke.rds")
+
+Bonn <- merge (Bonn, Bezirke)
+rm(Bezirke)
+```
+
+
+# Der Kurs
+
+\begincols \begincol{0.5\textwidth}
+
+- **Termin 1 & 2**
+  - Grundlagen
+  - Datentypen
+
+\vspace{0.5cm}
+
+- **Termin 3 & 4**
+  - Objekten
+  - Lesen und Schreiben
+
+\endcol \begincol{0.5\textwidth}
+
+- **Termin 5 & 6**
+  - Statistiken
+  - Grafiken
+
+\vspace{0.5cm}
+
+- **Termin 7 & 8**
+  - Fortgeschrittenes Programmieren
+  - Erstellen von Dokumenten
+  - Abschluss
+
+\endcol \endcols
+
+# Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**ggplot**
+
+\vspace{0.3cm}
+
+Paket `ggplot2`
+
+\vspace{0.5cm} \scriptsize
+
+```{r scatter, eval=FALSE}
+library(ggplot2)
+
+ggplot(iris,
+		aes(x = Petal.Length,
+			y = Petal.Width)) +
+	geom_point()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE}
+<<scatter>>
+```
+
+\endcol \endcols
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**scatterplot**
+
+\vspace{0.5cm} \scriptsize
+
+```{r scatter2, eval=FALSE}
+ggplot(iris,
+		aes(x = Petal.Length,
+			y = Petal.Width,
+			color = Species)) +
+	geom_point()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE}
+<<scatter2>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**scatterplot**
+
+\vspace{0.5cm} \scriptsize
+
+```{r scatter3, eval=FALSE}
+ggplot(iris,
+		aes(x = Petal.Length,
+			y = Petal.Width,
+			color = Species)) +
+	geom_point() +
+	facet_wrap(~ Species, ncol = 2)
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE}
+<<scatter3>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**histogram**
+
+\vspace{0.5cm} \scriptsize
+
+```{r histo, eval=FALSE}
+ggplot(iris,
+		aes(x = Petal.Length)) +
+	geom_histogram()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE, message=FALSE}
+<<histo>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**histogram**
+
+\vspace{0.5cm} \scriptsize
+
+```{r histo2, eval=FALSE}
+ggplot(iris,
+		aes(x = Petal.Length,
+			fill = Species)) +
+	geom_histogram()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE, message=FALSE}
+<<histo2>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**boxplot**
+
+\vspace{0.5cm} \scriptsize
+
+```{r box, eval=FALSE}
+ggplot(iris,
+		aes(x = Species,
+			y = Petal.Length)) +
+	geom_boxplot()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE, message=FALSE}
+<<box>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**boxplot**
+
+\vspace{0.5cm} \scriptsize
+
+```{r box2, eval=FALSE}
+ggplot(iris,
+		aes(x = Species,
+			y = Petal.Length,
+			fill = Species)) +
+	geom_boxplot() +
+	geom_jitter()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE, message=FALSE}
+<<box2>>
+```
+
+\endcol \endcols
+
+
+## Plots (2)
+
+\begincols \begincol{0.5\textwidth}
+
+**violin plot**
+
+\vspace{0.5cm} \scriptsize
+
+```{r violin, eval=FALSE}
+ggplot(iris,
+		aes(x = Species,
+			y = Petal.Length,
+			fill = Species)) +
+	geom_violin()
+```
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE, message=FALSE}
+<<violin>>
+```
+
+\endcol \endcols
+
+
+# Wie ein Profi
+
+\begincols \begincol{0.5\textwidth}
+
+- Iterationen (Schleifen)
+- Funktionen
+- Quellcode
+- Pakete
+
+\endcol \begincol{0.5\textwidth}
+
+
+\scriptsize
+
+```{r}
+for (i in 1:5)
+  print(paste("Da wert von i ist", i))
+```
+
+\vspace{0.5cm}
+
+```{r}
+add_one <- function(x) {
+  return(x + 1)
+}
+
+add_one(c(1:5))
+```
+
+\endcol \endcols
+
+
+## Wie ein Profi
+
+\begincols \begincol{0.5\textwidth}
+
+**Iterationen** (Schleifen)
+
+\vspace{0.5cm}
+
+`repeat {Ausdruck}`\
+`while (Bedingung) {Ausdruck}`\
+`for (i in M) {Ausdruck}`
+
+\vspace{0.5cm}
+
+`next`\
+`break`
+
+\endcol \begincol{0.5\textwidth}
+
+
+\scriptsize
+
+```{r}
+for (i in names(Bonn)) {
+  if (is.numeric(Bonn[[i]])) {
+    print(paste(i, mean(Bonn[[i]])))
+  }
+}
+```
+
+\endcol \endcols
+
+
+## Wie ein Profi
+
+\begincols \begincol{0.5\textwidth}
+
+**Funktionen**
+
+\vspace{0.5cm}
+
+\scriptsize
+
+`foo <- function(Argumente) {Ausdruck}`
+
+\normalsize
+
+\vspace{0.3cm}
+
+- Definition
+- Parameter (Argumente)
+- Argumente mit Voreinstellungen
+- `...`
+
+\endcol \begincol{0.5\textwidth}
+
+\scriptsize
+
+```{r}
+mean_sd <- function(x) {
+  y <- c(mean(x), sd(x))
+  names(y) <- c("Mittelwert",
+      "Standardabweichung")
+  return(y)
+}
+
+mean_sd(Bonn$Gesamt)
+```
+
+\endcol \endcols
+
+
+## Wie ein Profi
+
+\begincols \begincol{0.5\textwidth}
+
+**Quellcode**
+
+\vspace{0.5cm}
+
+`source("Pfad")`
+
+\endcol \begincol{0.5\textwidth}
+
+\scriptsize
+
+```{r}
+source("MeineFunktionen.R", echo = TRUE)
+```
+
+\endcol \endcols
+
+
+# Schluss
+
+\begincols \begincol{0.5\textwidth}
+
+**Weitere Themen**
+
+\vspace{0.5cm}
+
+- Interaktive Dokumente
+  - *shiny* Apps
+  - *leaflet* widgets
+- Räumliche Daten (GIS)
+- Text Analyse
+- Bild Animation
+- R Pakete
+- Internet Seiten
+
+\endcol \begincol{0.5\textwidth}
+
+```{r echo=FALSE}
+include_graphics("images/hello-shiny.png")
+```
+
+\endcol \endcols
+
+## Schluss
+
+```{r echo=FALSE, out.width = "0.8\\textwidth"}
+include_graphics("images/the-end.jpg")
+```
+
+
+#
+
+\LARGE
+
+**Vielen Dank!**
+
+\vspace{1cm}
+
+\scriptsize
+
+```{r}
+library(fortunes)
+fortune(43)
+```
+

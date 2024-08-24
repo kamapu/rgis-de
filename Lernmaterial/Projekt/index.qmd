@@ -1,11 +1,11 @@
 ---
-title: "Abschlussprojekt"
+title: "Schlussprojekt"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
 image: student.jpg
 description:
-  Vorgaben für den Abschlussprotokoll.
+  Vorgaben für die Erstellung des Schlussprotokolls.
 draft: false
 ---
 

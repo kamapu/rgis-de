@@ -1,0 +1,181 @@
+---
+title: Einführung in RMarkdown
+author: Miguel Alvarez
+date: 2024-03-19
+format:
+  kamapu-beamer:
+    titleimage: images/flying-documents-cover.jpg
+    titlecol: ff0919
+---
+
+
+# Was ist Rmarkdown?
+
+**Framework für die Erstellung von Dokumenten**
+
+![](images/rmarkdown-flow.png){width="80%"}
+
+
+# Datei-Format
+
+:::: {.columns}
+::: {.column width="50%"}
+
+\vspace{0.5cm}
+
+`yaml`-Kopf (Einstellungen/Metadateien)
+
+\vspace{1.5cm}
+
+`Markdown`-Körper (Inhalt)
+
+\vspace{2cm}
+
+[Interactive Markdown tutorial](https://www.markdowntutorial.com/)
+
+:::
+::: {.column width="50%"}
+
+\scriptsize
+
+````
+---
+title: Meine Memoiren
+author: Miguel Alvarez
+output: pdf-document
+---
+
+# Einführung
+
+Lorem ipsum sapientem ne neque dolor erat,
+eros solet invidunt duo Quisque aliquid leo.
+
+# Fragestellung
+
+Pretium patrioque sociis eu nihil Cum
+enim ad, ipsum alii vidisse justo id.
+Option porttitor diam voluptua. Cu Eam
+augue dolor dolores quis, Nam aliquando
+elitr Etiam consetetur. 
+````
+
+:::
+::::
+
+
+# Code Chunks
+
+:::: {.columns}
+::: {.column width="50%"}
+
+\vspace{0.5cm}
+
+- Code Chunks (Zellen)
+  - Code Blocks
+  - Inline chunks
+
+:::
+::: {.column width="50%"}
+
+\scriptsize
+
+
+
+````
+
+```{{r echo=TRUE,eval=FALSE}}
+plot(Sepal.Length ~ Sepal.Width, data = iris)
+```
+
+````
+
+:::
+::::
+
+
+# Ausgangsformate
+
+\vspace{0.5cm}
+
+- Internet Seite
+- Dokumente
+  - HTML
+  - PDF
+  - DOCX
+- Folien
+  - ioslides (HTML)
+  - Beamer (PDF)
+  - PowerPoint (PPTX)
+
+
+# Einsatz von Rmarkdown
+
+- Literarisches Programmieren
+  - Vignettes und Tutorials
+- Dokumentation
+  - README in GitHub und GitLab Repositorien
+- Automatisierung von Dokumentenerzeugung
+
+
+# Warum Rmarkdwon für Dokumente?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+[**FAIR Prinzipien**](https://de.wikipedia.org/wiki/FAIR-Prinzipien) 
+
+\vspace{0.5cm}
+
+**F**indable\
+**A**ccessbile\
+**I**nteroperable\
+**R**e-usable
+
+:::
+::: {.column width="50%"}
+
+\scriptsize
+
+````
+---
+title: Meine Memoiren
+author: Miguel Alvarez
+output: pdf-document
+---
+
+# Einführung
+
+Lorem ipsum sapientem ne neque dolor erat,
+eros solet invidunt duo Quisque aliquid leo.
+
+# Fragestellung
+
+Pretium patrioque sociis eu nihil Cum
+enim ad, ipsum alii vidisse justo id.
+Option porttitor diam voluptua. Cu Eam
+augue dolor dolores quis, Nam aliquando
+elitr Etiam consetetur.
+````
+
+:::
+::::
+
+
+# Warum Rmarkdwon für Dokumente?
+
+- Trennung von Layout und Inhalt
+- Inhalt wird Quellcode
+  - Versionmanagement mit Git
+  - Kollaboratives/Agiles Arbeiten mit GitHub, GitLab und Co.
+
+
+# Warum Rmarkdwon für Dokumente?
+
+Integration von Daten und Textinhalte
+
+\centering \vspace{0.5cm}
+
+![](images/db-to-document.png){width="80%"}
+
+
+# Danke schön!

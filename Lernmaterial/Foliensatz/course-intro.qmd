@@ -1,0 +1,106 @@
+---
+title: Auswertung von Umweltvariablen
+subtitle: ein Fall für GIS und R
+format:
+  kamapu-beamer:
+    titlecol: fff500
+    titleimage: images/cover-mapping.jpg
+      
+---
+
+# Der Kurs
+
+9:00 -- 12:00\
+13:30 -- 16:30
+
+\vspace{0.3cm}
+
+\vspace{0.5cm}
+
+- Methoden
+  - Vortrag
+  - Life-Codierung
+  - Übungen / Coaching
+
+```{r}
+#| echo: false
+library(qrcode)
+library(rsvg)
+generate_svg(qr_code("https://kamapu.github.io/rgis-de/"),
+    filename = "images/qr-homepage.svg")
+rsvg_png("images/qr-homepage.svg", "images/qr-homepage.png")
+```
+
+\sidepic{images/KursAethiopien2.jpg}
+
+
+# Der Kurs
+
+**Lernmaterialien**
+
+<https://kamapu.github.io/rgis-de/>
+
+\vspace{1cm}
+
+[![](images/qr-homepage.png){width="20%"}](https://kamapu.github.io/rgis-de/)
+
+\sidepic{images/course-page.png}
+
+
+# Der Trainer
+
+**Miguel Alvarez**
+
+\vspace{0.5cm}
+
+- Agrarwissenschaftler
+- Geobotaniker
+- Vegetationsökologist
+- Computerfreak
+  - Statistisches Programmieren
+  - Data-Science/KI
+  - GIS
+
+<https://kamapu.github.io/>
+
+\sidepic{images/miguel-profile.jpg}
+
+
+# Die Studenten
+
+- Motivation für den Kurs
+- Erfahrung mit GIS
+- Erfahrung mit R
+
+```{r}
+#| echo: false
+generate_svg(qr_code("https://board.net/p/rub-gis"),
+    filename = "images/qr-etherpad.svg")
+rsvg_png("images/qr-etherpad.svg", "images/qr-etherpad.png")
+```
+
+\vspace{1cm}
+
+[![](images/qr-etherpad.png){width="20%"}](https://board.net/p/rub-gis)
+
+
+\sidepic{images/gis-students.jpg}
+
+
+# Abschlussarbeit
+
+**Protokoll**
+
+\vspace{0.5cm}
+
+- Anforderungen Online
+- Abgabetermin Ende Oktober?
+
+\vspace{0.5cm} \footnotesize
+
+<https://kamapu.github.io/rgis-de/Lernmaterial/Projekt/>
+
+\sidepic{images/project-page.png}
+
+
+# Thanks!
