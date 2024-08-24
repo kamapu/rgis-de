@@ -3,19 +3,122 @@ title: "Verteilte Dateien"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: bochum-roads.png
 description:
-  Berechnungen von Informationen aus Vektoren.
+  Beschreibung der Dateien, die für den Kurs verteilt werden.
 draft: false
 ---
+
+# Dateien Herunterladen
 
 - Beschreibung der verteilten Dateien
   - Quelle
   - Inhalt/Format
   - Einlesen
 
+# Beschreibung der Datensätzen
+
+## Bodenfeuchte Messungen
+
+Daten eines Sensornetzwerkes zur Messung von Bodenfeuchte und Bodeneigenschaften.
+Die Daten wurden im Hainich, Deutschland, im Rahmen des AquaDiva-Projekts erhoben.
+Die Daten wurden von [Zenodo](https://zenodo.org/records/8063928) heruntergeladen und geringfügig angepasst.
+Das Format ist in diesem Fall .csv (comma separated values) und beinhaltet Koordinaten in UTM Format.
+
+```{r}
+Boden <- read.csv("data/soil_properties.csv")
+head(Boden[ , 1:7])
+```
+
+Alternativ zu `read.csv()`, das ein Objekt **data.frame** erzeugt, dieser Datensatz kann direkt als **tibble** importiert werden.
+
+```{r}
+#| message: false
+library(readr)
+Boden <- read_csv("data/soil_properties.csv")
+Boden
+```
+
+## Stadtbezirke in Bochum
+
+Ein ESRI-Shapefile mit den Stadtbezirken von Bochum.
+Die Datei stammt aus dem [Open Data Portal der Stadt Bochum](https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung).
+Der Inhalt der Attributtabelle wurde vereinfacht.
+
+```{r}
+#| message: false
+#| results: 'hide'
+library(sf)
+Bochum <- st_read("data/Stadtbezirke.shp")
+plot(st_geometry(Bochum))
+```
 
 
-# Geländemodel
+## Straßennetz in Bochum
 
-<https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html>
+Straßennetz von Bochum aus Open Street Maps.
+Dieser Datensatz wurde mit Hilfe des Paketes `osmdata` (siehe [dieses Tutorial](https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html)) direkt in R heruntergeladen und als `sf`-Objekt in einer rds-Datei gespeichert.
+
+```{r}
+library(sf)
+#library(ggplot2)
+Bochum_str <- readRDS("data/roads.rds")
+plot(Bochum_str["type"])
+```
+
+## Krankenhäuser
+
+Dieser Datensatz ist ebenfalls mit `osmdata` für Bochum heruntergeladen.
+
+```{r}
+library(sf)
+Bochum_krh <- readRDS("data/hospitals.rds")
+plot(st_geometry(Bochum_krh), col = "red", border = "red")
+```
+
+
+## Biomasse von Wäldern
+
+Dieser Datensatz stellt die oberirdische Biomasse der Wälder (AGBD für above-ground biomass density) für den Raum Bochum dar.
+Die Datei ist im GeoTiff-Format gespeichert und wurde ursprünglich aus dem [Katalog der Geodateninfrastruktur Deutschland](https://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/metadata/a3c5b57f-8d87-42d2-a3b2-8f5a230964ae) heruntergeladen.
+Aufgrund der Größe wurde diese Datei in Kacheln (Tiles) aufgeteilt.
+
+```{r}
+#| message: false
+library(terra)
+t_names <- paste0("agbd-2022-tile", c(1:4), ".tif")
+Biomasse <- vrt(file.path("data", t_names))
+plot(Biomasse)
+```
+
+
+## Geländemodel DGM200m
+
+Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m.
+Das Modell stammt aus dem [Portal des Bundesamtes für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html) und wurde aus der Umgebung von Bochum ausgeschnitten.
+Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.
+
+```{r}
+#| message: false
+library(terra)
+DGM <- rast("data/dgm-200m.tif")
+plot(DGM)
+```
+
+
+## Geländemodel DGM1000m
+
+Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m.
+Das Modell stammt aus dem [Portal des Bundesamtes für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S).
+Diese Datei liegt im ASCII-Format vor.
+
+```{r}
+#| message: false
+library(terra)
+DGM <- rast("data/dgm-1000m.asc")
+crs(DGM) <- "epsg:25832"
+plot(DGM)
+```
+
+
+

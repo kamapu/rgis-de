@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel Alvarez">
-<meta name="description" content="Berechnungen von Informationen aus Vektoren.">
+<meta name="description" content="Beschreibung der Dateien, die für den Kurs verteilt werden.">
 
 <title>Verteilte Dateien</title>
 <style>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -129,7 +163,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#geländemodel" id="toc-geländemodel" class="nav-link active" data-scroll-target="#geländemodel">Geländemodel</a></li>
+  <li><a href="#dateien-herunterladen" id="toc-dateien-herunterladen" class="nav-link active" data-scroll-target="#dateien-herunterladen">Dateien Herunterladen</a></li>
+  <li><a href="#beschreibung-der-datensätzen" id="toc-beschreibung-der-datensätzen" class="nav-link" data-scroll-target="#beschreibung-der-datensätzen">Beschreibung der Datensätzen</a>
+  <ul class="collapse">
+  <li><a href="#bodenfeuchte-messungen" id="toc-bodenfeuchte-messungen" class="nav-link" data-scroll-target="#bodenfeuchte-messungen">Bodenfeuchte Messungen</a></li>
+  <li><a href="#stadtbezirke-in-bochum" id="toc-stadtbezirke-in-bochum" class="nav-link" data-scroll-target="#stadtbezirke-in-bochum">Stadtbezirke in Bochum</a></li>
+  <li><a href="#straßennetz-in-bochum" id="toc-straßennetz-in-bochum" class="nav-link" data-scroll-target="#straßennetz-in-bochum">Straßennetz in Bochum</a></li>
+  <li><a href="#krankenhäuser" id="toc-krankenhäuser" class="nav-link" data-scroll-target="#krankenhäuser">Krankenhäuser</a></li>
+  <li><a href="#biomasse-von-wäldern" id="toc-biomasse-von-wäldern" class="nav-link" data-scroll-target="#biomasse-von-wäldern">Biomasse von Wäldern</a></li>
+  <li><a href="#geländemodel-dgm200m" id="toc-geländemodel-dgm200m" class="nav-link" data-scroll-target="#geländemodel-dgm200m">Geländemodel DGM200m</a></li>
+  <li><a href="#geländemodel-dgm1000m" id="toc-geländemodel-dgm1000m" class="nav-link" data-scroll-target="#geländemodel-dgm1000m">Geländemodel DGM1000m</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -143,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Berechnungen von Informationen aus Vektoren.
+    Beschreibung der Dateien, die für den Kurs verteilt werden.
   </div>
 </div>
 
@@ -167,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Geändert</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">23. August 2024</p>
+      <p class="date-modified">24. August 2024</p>
     </div>
   </div>
     
@@ -178,6 +222,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dateien-herunterladen" class="level1">
+<h1>Dateien Herunterladen</h1>
 <ul>
 <li>Beschreibung der verteilten Dateien
 <ul>
@@ -186,11 +232,155 @@ ul.task-list li input[type="checkbox"] {
 <li>Einlesen</li>
 </ul></li>
 </ul>
-<section id="geländemodel" class="level1">
-<h1>Geländemodel</h1>
-<p><a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html" class="uri">https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-1000-m-dgm1000.html</a></p>
+</section>
+<section id="beschreibung-der-datensätzen" class="level1">
+<h1>Beschreibung der Datensätzen</h1>
+<section id="bodenfeuchte-messungen" class="level2">
+<h2 class="anchored" data-anchor-id="bodenfeuchte-messungen">Bodenfeuchte Messungen</h2>
+<p>Daten eines Sensornetzwerkes zur Messung von Bodenfeuchte und Bodeneigenschaften. Die Daten wurden im Hainich, Deutschland, im Rahmen des AquaDiva-Projekts erhoben. Die Daten wurden von <a href="https://zenodo.org/records/8063928">Zenodo</a> heruntergeladen und geringfügig angepasst. Das Format ist in diesem Fall .csv (comma separated values) und beinhaltet Koordinaten in UTM Format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/soil_properties.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Boden[ , <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  smmp_id depthpos node_id   x_smmp  y_smmp z_surface install_year
+1       3        b      76 598783.3 5662778    367.04         2014
+2       3        t      76 598783.3 5662778    367.04         2014
+3       6        b       8 598788.4 5662805    364.65         2014
+4       6        t       8 598788.4 5662805    364.65         2014
+5      10        b      76 598793.6 5662774    367.33         2014
+6      10        t      76 598793.6 5662774    367.33         2014</code></pre>
+</div>
+</div>
+<p>Alternativ zu <code>read.csv()</code>, das ein Objekt <strong>data.frame</strong> erzeugt, dieser Datensatz kann direkt als <strong>tibble</strong> importiert werden.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/soil_properties.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Boden</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 420 × 24
+   smmp_id depthpos node_id  x_smmp   y_smmp z_surface install_year next_tree_id
+     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+ 1       3 b             76 598783. 5662778.      367.         2014         1098
+ 2       3 t             76 598783. 5662778.      367.         2014         1098
+ 3       6 b              8 598788. 5662805.      365.         2014          102
+ 4       6 t              8 598788. 5662805.      365.         2014          102
+ 5      10 b             76 598794. 5662774.      367.         2014          171
+ 6      10 t             76 598794. 5662774.      367.         2014          171
+ 7      13 b              6 598796. 5662808.      364.         2014           26
+ 8      13 t              6 598796. 5662808.      364.         2014           26
+ 9      15 b             45 598804. 5662757.      369.         2014          243
+10      15 t             45 598804. 5662757.      369.         2014          243
+# ℹ 410 more rows
+# ℹ 16 more variables: next_tree_dist &lt;dbl&gt;, tree_pos &lt;chr&gt;, smmp_type &lt;chr&gt;,
+#   profiledepth_cm &lt;dbl&gt;, sampling_date_core &lt;chr&gt;, fc_vol_perc &lt;dbl&gt;,
+#   ks_m_s &lt;dbl&gt;, bulkdens_kg_m3 &lt;dbl&gt;, porosity_sat_vol_perc &lt;dbl&gt;,
+#   porosity_calc_vol_perc &lt;dbl&gt;, gravel_grav_perc &lt;dbl&gt;, sand_grav_perc &lt;dbl&gt;,
+#   silt_grav_perc &lt;dbl&gt;, clay_grav_perc &lt;dbl&gt;, textureclass &lt;chr&gt;,
+#   textureclass_ger &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="stadtbezirke-in-bochum" class="level2">
+<h2 class="anchored" data-anchor-id="stadtbezirke-in-bochum">Stadtbezirke in Bochum</h2>
+<p>Ein ESRI-Shapefile mit den Stadtbezirken von Bochum. Die Datei stammt aus dem <a href="https://www.bochum.de/Open-Data/Datensaetze/Geografie-Geodaten-und-Stadtplanung">Open Data Portal der Stadt Bochum</a>. Der Inhalt der Attributtabelle wurde vereinfacht.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Bochum <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/Stadtbezirke.shp"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="straßennetz-in-bochum" class="level2">
+<h2 class="anchored" data-anchor-id="straßennetz-in-bochum">Straßennetz in Bochum</h2>
+<p>Straßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes <code>osmdata</code> (siehe <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html">dieses Tutorial</a>) direkt in R heruntergeladen und als <code>sf</code>-Objekt in einer rds-Datei gespeichert.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Bochum_str <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/roads.rds"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Bochum_str[<span class="st">"type"</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="krankenhäuser" class="level2">
+<h2 class="anchored" data-anchor-id="krankenhäuser">Krankenhäuser</h2>
+<p>Dieser Datensatz ist ebenfalls mit <code>osmdata</code> für Bochum heruntergeladen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Bochum_krh <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/hospitals.rds"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(Bochum_krh), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="biomasse-von-wäldern" class="level2">
+<h2 class="anchored" data-anchor-id="biomasse-von-wäldern">Biomasse von Wäldern</h2>
+<p>Dieser Datensatz stellt die oberirdische Biomasse der Wälder (AGBD für above-ground biomass density) für den Raum Bochum dar. Die Datei ist im GeoTiff-Format gespeichert und wurde ursprünglich aus dem <a href="https://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/metadata/a3c5b57f-8d87-42d2-a3b2-8f5a230964ae">Katalog der Geodateninfrastruktur Deutschland</a> heruntergeladen. Aufgrund der Größe wurde diese Datei in Kacheln (Tiles) aufgeteilt.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>t_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"agbd-2022-tile"</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="st">".tif"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Biomasse <span class="ot">&lt;-</span> <span class="fu">vrt</span>(<span class="fu">file.path</span>(<span class="st">"data"</span>, t_names))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Biomasse)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geländemodel-dgm200m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm200m">Geländemodel DGM200m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/digitales-gelandemodell-gitterweite-200-m-dgm200.html">Portal des Bundesamtes für Kartographie und Geodäsie</a> und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-200m.tif"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geländemodel-dgm1000m" class="level2">
+<h2 class="anchored" data-anchor-id="geländemodel-dgm1000m">Geländemodel DGM1000m</h2>
+<p>Ein digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem <a href="https://gdz.bkg.bund.de/index.php/default/wms-digitales-gelandemodell-gitterweite-1000-m-wms-dgm1000.html?___SID=S">Portal des Bundesamtes für Kartographie und Geodäsie</a>. Diese Datei liegt im ASCII-Format vor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>DGM <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/dgm-1000m.asc"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(DGM) <span class="ot">&lt;-</span> <span class="st">"epsg:25832"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DGM)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

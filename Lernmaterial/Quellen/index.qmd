@@ -3,7 +3,7 @@ title: "Zusätzliche Datenquellen Online"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: 7rFB.gif
 description:
   Berechnungen von Informationen aus Vektoren.
 draft: false
@@ -14,6 +14,10 @@ draft: false
 - [Open Data Portal am Bundesamt für Kartographie und Geodäsie](https://gdz.bkg.bund.de/index.php/default/open-data.html)
 - [Open Data Portal der Stadt Bochum](https://www.bochum.de/Open-Data/Datensaetze)
 - [Portal des Deutschen Wetter Dienstes](https://dwd-geoportal.de/)
+
+<https://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/home>
+
+## Zenodo
 
 # Herunterladen mit APIs oder Paketen
 

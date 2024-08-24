@@ -2,7 +2,7 @@
 title: |
   | Auswertung von Umweltvariablen
   | mit der statistischen
-  | Programmiersprache R
+  | Programmiersprache R"
 toc: false
 ---
 
@@ -14,4 +14,4 @@ Willkommen zu dieser Einführung in GIS-Anwendungen in der Programmiersprache R!
 
 In diesem Kurs werden die Grundlagen von Geographischen Informationssystemen diskutiert und die Vorteile der statistischen Programmierung live demonstriert.
 
-Viel Spaß dabei!
+**Viel Spaß dabei!**

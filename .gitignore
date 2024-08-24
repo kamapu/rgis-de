@@ -4,6 +4,7 @@
 # LibreOffice temporaries
 **/*.docx#
 **/*.xlsx#
+**/*.csv#
 
 # Quarto files and extensions
 /.quarto/
