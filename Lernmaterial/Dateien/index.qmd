@@ -11,10 +11,43 @@ draft: false
 
 # Dateien Herunterladen
 
-- Beschreibung der verteilten Dateien
-  - Quelle
-  - Inhalt/Format
-  - Einlesen
+Die Dateien, die für diesen Kurs benötigt werden, sind [im folgenden Repo](https://github.com/kamapu/rgis-de/blob/main/Lernmaterial/Dateien/data/) hochgeladen.
+Alle Dateien können während der laufenden Sitzung mit den folgenden Befehlszeilen heruntergeladen werden.
+
+```{r}
+#| eval: false
+library(rvest)
+url_data <- "kamapu/rgis-de/blob/main/Lernmaterial/Dateien/data"
+page <- read_html(file.path("https://github.com", url_data))
+file_links <- page %>%
+  html_nodes("a") %>%
+  html_attr("href")
+file_links <- unique(file_links[grepl(url_data, file_links) &
+                                  file_links != url_data])
+file_links <- sub("/blob/", "/", file_links)
+dir.create("data")
+for(i in paste0("https://raw.githubusercontent.com", file_links))
+  download.file(i, file.path("data", basename(i)), method = "curl")
+```
+
+
+```{r}
+#| echo: false
+files <- list.files("data", full.names = TRUE, recursive = TRUE)
+size_files <- sapply(files, file.size)
+size_files <- round(sum(size_files)/(1024*1024))
+```
+
+
+::: {.callout-warning}
+## Achte auf deiner Speicherplatz!
+
+Zum Herunterladen dieser Dateien werden ca. `{r} print(size_files)` MB freier Speicherplatz benötigt.
+Da die Berechnungen mit den Rasterdatensätzen neue, ebenfalls große Dateien erzeugen, sollte ein Vielfaches dieser Größe frei gehalten werden, um damit auf dem eigenen PC arbeiten zu können.
+:::
+
+Hier ein Zahl `{r} print(size_files)`.
+
 
 # Beschreibung der Datensätzen
 

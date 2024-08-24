@@ -144,7 +144,7 @@
     "href": "Lernmaterial/Dateien/index.html",
     "title": "Verteilte Dateien",
     "section": "",
-    "text": "Beschreibung der verteilten Dateien\n\nQuelle\nInhalt/Format\nEinlesen"
+    "text": "Die Dateien, die für diesen Kurs benötigt werden, sind im folgenden Repo hochgeladen. Alle Dateien können während der laufenden Sitzung mit den folgenden Befehlszeilen heruntergeladen werden.\n\nlibrary(rvest)\nurl_data &lt;- \"kamapu/rgis-de/blob/main/Lernmaterial/Dateien/data\"\npage &lt;- read_html(file.path(\"https://github.com\", url_data))\nfile_links &lt;- page %&gt;%\n  html_nodes(\"a\") %&gt;%\n  html_attr(\"href\")\nfile_links &lt;- unique(file_links[grepl(url_data, file_links) &\n                                  file_links != url_data])\nfile_links &lt;- sub(\"/blob/\", \"/\", file_links)\ndir.create(\"data\")\nfor(i in paste0(\"https://raw.githubusercontent.com\", file_links))\n  download.file(i, file.path(\"data\", basename(i)), method = \"curl\")\n\n\n\n\n\n\n\nAchte auf deiner Speicherplatz!\n\n\n\nZum Herunterladen dieser Dateien werden ca. 31 MB freier Speicherplatz benötigt. Da die Berechnungen mit den Rasterdatensätzen neue, ebenfalls große Dateien erzeugen, sollte ein Vielfaches dieser Größe frei gehalten werden, um damit auf dem eigenen PC arbeiten zu können.\n\n\nHier ein Zahl 31."
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#bodenfeuchte-messungen",
