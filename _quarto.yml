@@ -2,7 +2,9 @@ project:
   type: website
   render:
     - "*.qmd"
-    - "!Lernmaterial/Foliensatz/R-intro.qmd"
+    - "!Lernmaterial/Foliensatz/course-intro.qmd"
+    - "!Lernmaterial/Foliensatz/gis-intro.qmd"
+
   #resources: ["documents/screenplay.pdf","documents/vegetation_in_r.pdf"]
   output-dir: docs
   preview: 

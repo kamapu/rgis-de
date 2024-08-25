@@ -3,10 +3,19 @@ title: "Foliensätze für den Kurs"
 date: '2024-08-19'
 author: Miguel Alvarez
 date-modified: today
-#image: images/pirat-ship-cover.jpg
+image: images/screenshot-slides.jpg
 description:
   Berechnungen von Informationen aus Vektoren.
 draft: false
+toc: false
 ---
 
-- Foliensätze pro Sitzung
+# Liste der Foliensätzen
+
+- [Einführung zu dem Kurs](course-intro.pdf)
+- Einführung in R (aus dem VHS-Bonn)
+  - [Satz 1](FolienRKurs-12.pdf)
+  - [Satz 2](FolienRKurs-34.pdf)
+  - [Satz 3](FolienRKurs-56.pdf)
+  - [Satz 4](FolienRKurs-78.pdf)
+- [Einführung in GIS](gis-intro.pdf)
