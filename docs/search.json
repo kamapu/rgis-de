@@ -159,5 +159,19 @@
     "title": "Verteilte Dateien",
     "section": "Geländemodel DGM1000m",
     "text": "Geländemodel DGM1000m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 1000 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie. Diese Datei liegt im ASCII-Format vor.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-1000m.asc\")\ncrs(DGM) &lt;- \"epsg:25832\"\nplot(DGM)"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#track-log-von-troisdorf-nach-bochum",
+    "href": "Lernmaterial/Dateien/index.html#track-log-von-troisdorf-nach-bochum",
+    "title": "Verteilte Dateien",
+    "section": "Track Log von Troisdorf nach Bochum",
+    "text": "Track Log von Troisdorf nach Bochum\nIn dieser Datei ist ein Track Log aufgezeichnet, der die Strecke von Troisdorf nach Bochum zeigt. Die Daten wurden mit einem GPS-Gerät (Garmin etrex 30) aufgezeichnet.\n\nlibrary(sf)\nlibrary(mapview)\n\nTrack &lt;- st_read(\"data/Troisdorf-Bochum.gpx\",\n                 \"track_points\")\n\n\nmapview(Track, cex = 1)"
+  },
+  {
+    "objectID": "Lernmaterial/Dateien/index.html#bioklimatisches-modell-worldclim",
+    "href": "Lernmaterial/Dateien/index.html#bioklimatisches-modell-worldclim",
+    "title": "Verteilte Dateien",
+    "section": "Bioklimatisches Modell WorldClim",
+    "text": "Bioklimatisches Modell WorldClim\nEin Satz von bioklimatischen Variablen aus dem WorldClim Modell. Dieser Datensatz wurde mit dem Paket geodata heruntergeladen und auf die Umgebung von Bochum zugeschnitten.\n\nlibrary(terra)\nbio &lt;- rast(\"data/worldclim_bio.tif\")\nplot(bio)"
   }
 ]
