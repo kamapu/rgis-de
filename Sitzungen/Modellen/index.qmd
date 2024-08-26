@@ -6,7 +6,7 @@ date-modified: today
 image: ../../images/dalle-workers.jpg
 description:
   Einschätzung von Korrelationen und Entwerfung von Regressionsmodellen.
-draft: false
+draft: true
 ---
 
 - Regression
