@@ -110,6 +110,24 @@ plot(st_geometry(Bochum_krh), col = "red", border = "red")
 ```
 
 
+## Track Log von Troisdorf nach Bochum
+
+In dieser Datei ist ein Track Log aufgezeichnet, der die Strecke von Troisdorf nach Bochum zeigt.
+Die Daten wurden mit einem GPS-Gerät (Garmin etrex 30) aufgezeichnet.
+
+```{r}
+#| results: "hide"
+library(sf)
+library(mapview)
+
+Track <- st_read("data/Troisdorf-Bochum.gpx",
+                 "track_points")
+```
+
+```{r}
+mapview(Track, cex = 1)
+```
+
 ## Biomasse von Wäldern
 
 Dieser Datensatz stellt die oberirdische Biomasse der Wälder (AGBD für above-ground biomass density) für den Raum Bochum dar.
@@ -125,7 +143,7 @@ plot(Biomasse)
 ```
 
 
-# Bioklimatisches Modell WorldClim
+## Bioklimatisches Modell WorldClim
 
 Ein Satz von bioklimatischen Variablen aus dem [WorldClim Modell](https://www.worldclim.org/data/bioclim.html).
 Dieser Datensatz wurde mit dem Paket `geodata` heruntergeladen und auf die Umgebung von Bochum zugeschnitten.
