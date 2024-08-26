@@ -6,7 +6,7 @@ date-modified: today
 image: ../../images/dalle-workers.jpg
 description:
   Auswertung und Berechnung in Rasterdatensätzen mit dem Paket `terra`.
-draft: false
+draft: true
 ---
 
 - Klassifizieren

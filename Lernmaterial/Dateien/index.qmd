@@ -125,6 +125,19 @@ plot(Biomasse)
 ```
 
 
+# Bioklimatisches Modell WorldClim
+
+Ein Satz von bioklimatischen Variablen aus dem [WorldClim Modell](https://www.worldclim.org/data/bioclim.html).
+Dieser Datensatz wurde mit dem Paket `geodata` heruntergeladen und auf die Umgebung von Bochum zugeschnitten.
+
+```{r}
+#| message: false
+library(terra)
+bio <- rast("data/worldclim_bio.tif")
+plot(bio)
+```
+
+
 ## Geländemodel DGM200m
 
 Ein digitales Geländemodell (DGM) mit einer Gitterweite von 200 m.

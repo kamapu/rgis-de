@@ -49,25 +49,11 @@
     "text": "Miguel Alvarez\n\n\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
   },
   {
-    "objectID": "Sitzungen/Vektoren/index.html",
-    "href": "Sitzungen/Vektoren/index.html",
-    "title": "Auswertung von Geländemodellen",
-    "section": "",
-    "text": "Länge und Fläche\nDichte von Punkten\nEntfernung zu Objekten"
-  },
-  {
-    "objectID": "Sitzungen/Modellen/index.html",
-    "href": "Sitzungen/Modellen/index.html",
-    "title": "Regressionsmodelle",
-    "section": "",
-    "text": "Regression\nAutokorrelation"
-  },
-  {
     "objectID": "Sitzungen.html",
     "href": "Sitzungen.html",
     "title": "Sitzungen",
     "section": "",
-    "text": "Einführung in R und RStudio\n\n\nCrash-Kurs in die Arbeit mit RStudio und Grundlagen von R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrundlagen von GIS\n\n\nEine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAuswertung von Geländemodellen\n\n\nBehandlung von Objekten, die als vektorielle Geometrien in GIS repräsentiert werden, mit Schwerpunkt auf dem Paket sf.\n\n\n\nMiguel Alvarez\n\n\n27.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBerechnungen in Raster-Datensätzen\n\n\nAuswertung und Berechnung in Rasterdatensätzen mit dem Paket terra.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArbeit mit Geländemodellen\n\n\nMethoden, die speziell für die Auswertung von Geländemodellen geeignet sind.\n\n\n\nMiguel Alvarez\n\n\n28.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressionsmodelle\n\n\nEinschätzung von Korrelationen und Entwerfung von Regressionsmodellen.\n\n\n\nMiguel Alvarez\n\n\n29.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisierung räumlicher Daten\n\n\nWiederholung der Funktionen zur Darstellung geographischer und nicht-geographischer Informationen.\n\n\n\nMiguel Alvarez\n\n\n30.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Einführung in R und RStudio\n\n\nCrash-Kurs in die Arbeit mit RStudio und Grundlagen von R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrundlagen von GIS\n\n\nEine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.\n\n\n\nMiguel Alvarez\n\n\n26.08.2024\n\n\n\n\n\n\n\n\nKeine Treffer"
   },
   {
     "objectID": "Lernmaterial/Projekt/index.html",
@@ -103,27 +89,6 @@
     "title": "Zusätzliche Datenquellen Online",
     "section": "",
     "text": "Open Data Portal am Bundesamt für Kartographie und Geodäsie\nOpen Data Portal der Stadt Bochum\nPortal des Deutschen Wetter Dienstes\n\nhttps://gdk.gdi-de.org/geonetwork/srv/eng/catalog.search#/home"
-  },
-  {
-    "objectID": "Sitzungen/Gelände/index.html",
-    "href": "Sitzungen/Gelände/index.html",
-    "title": "Arbeit mit Geländemodellen",
-    "section": "",
-    "text": "TPI/TWI\nMoving Windows"
-  },
-  {
-    "objectID": "Sitzungen/Rasters/index.html",
-    "href": "Sitzungen/Rasters/index.html",
-    "title": "Berechnungen in Raster-Datensätzen",
-    "section": "",
-    "text": "Klassifizieren\nAlgebra in Raster Datensätzen\nProjektionen"
-  },
-  {
-    "objectID": "Sitzungen/Visualisierung/index.html",
-    "href": "Sitzungen/Visualisierung/index.html",
-    "title": "Visualisierung räumlicher Daten",
-    "section": "",
-    "text": "ggplot (again)\nKarten\nleaflet?"
   },
   {
     "objectID": "index.html",

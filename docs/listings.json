@@ -3,12 +3,7 @@
     "listing": "/Sitzungen.html",
     "items": [
       "/Sitzungen/R-und-RStudio/index.html",
-      "/Sitzungen/Grundlagen-GIS/index.html",
-      "/Sitzungen/Vektoren/index.html",
-      "/Sitzungen/Rasters/index.html",
-      "/Sitzungen/Gelände/index.html",
-      "/Sitzungen/Modellen/index.html",
-      "/Sitzungen/Visualisierung/index.html"
+      "/Sitzungen/Grundlagen-GIS/index.html"
     ]
   },
   {
