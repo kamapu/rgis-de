@@ -347,7 +347,7 @@ just_now
 A complete list of time zones can be found at [this Wikipedia page](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (column **TZ identifier**).
 :::
 
-
+<!-- 
 ::: {.callout-caution}
 # Exercises
 
@@ -374,19 +374,21 @@ The columns in the data frame are
 - **diesel_vat**: Diesel VAT as percentage rate
 
 You can dowload the data from [this link](fuel-prices.csv) and store it in your working directory.
-Alternatively you can download it directly from your running session by using following command:
+Alternatively you can download it directly from your running session by using following command: -->
 
 ```{r}
 #| eval: false
+#| echo: false
 download.file(
     url = "https://kamapu.gitlab.io/coachingR/Topics/Data/fuel-prices.csv",
     destfile = "fuel-prices.csv", method = "curl")
 ```
 
-After that, import the data in your session.
+<!-- After that, import the data in your session. -->
 
 ```{r}
 #| eval: false
+#| echo: false
 fuel_prices <- read.csv("fuel-prices.csv")
 head(fuel_prices)
 ```

@@ -3,7 +3,9 @@
     "listing": "/Sitzungen.html",
     "items": [
       "/Sitzungen/R-und-RStudio/index.html",
-      "/Sitzungen/Grundlagen-GIS/index.html"
+      "/Sitzungen/Grundlagen-GIS/index.html",
+      "/Sitzungen/Vektoren/index.html",
+      "/Sitzungen/Rasters/index.html"
     ]
   },
   {
@@ -12,9 +14,11 @@
       "/Lernmaterial/Foliensatz/index.html",
       "/Lernmaterial/Installieren/index.html",
       "/Lernmaterial/Dateien/index.html",
+      "/Lernmaterial/Skripten/index.html",
+      "/Lernmaterial/Schummelzettel/index.html",
       "/Lernmaterial/Lesenswert/index.html",
-      "/Lernmaterial/Quellen/index.html",
-      "/Lernmaterial/Projekt/index.html"
+      "/Lernmaterial/Projekt/index.html",
+      "/Lernmaterial/Quellen/index.html"
     ]
   }
 ]
