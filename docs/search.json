@@ -109,7 +109,7 @@
     "href": "Lernmaterial/Dateien/index.html",
     "title": "Verteilte Dateien",
     "section": "",
-    "text": "Die Dateien, die für diesen Kurs benötigt werden, sind im folgenden Repo hochgeladen. Alle Dateien können während der laufenden Sitzung mit den folgenden Befehlszeilen heruntergeladen werden.\n\nlibrary(rvest)\nurl_data &lt;- \"kamapu/rgis-de/blob/main/Lernmaterial/Dateien/data\"\npage &lt;- read_html(file.path(\"https://github.com\", url_data))\nfile_links &lt;- page %&gt;%\n  html_nodes(\"a\") %&gt;%\n  html_attr(\"href\")\nfile_links &lt;- unique(file_links[grepl(url_data, file_links) &\n                                  file_links != url_data])\nfile_links &lt;- sub(\"/blob/\", \"/\", file_links)\ndir.create(\"data\")\nfor(i in paste0(\"https://raw.githubusercontent.com\", file_links))\n  download.file(i, file.path(\"data\", basename(i)), method = \"curl\")\n\n\n\n\n\n\n\nAchte auf deiner Speicherplatz!\n\n\n\nZum Herunterladen dieser Dateien werden ca. 31 MB freier Speicherplatz benötigt. Da die Berechnungen mit den Rasterdatensätzen neue, ebenfalls große Dateien erzeugen, sollte ein Vielfaches dieser Größe frei gehalten werden, um damit auf dem eigenen PC arbeiten zu können.\n\n\nHier ein Zahl 31."
+    "text": "Die Dateien, die für diesen Kurs benötigt werden, sind im folgenden Repo hochgeladen. Alle Dateien können während der laufenden Sitzung mit den folgenden Befehlszeilen heruntergeladen werden.\n\nlibrary(rvest)\nurl_data &lt;- \"kamapu/rgis-de/blob/main/Lernmaterial/Dateien/data\"\npage &lt;- read_html(file.path(\"https://github.com\", url_data))\nfile_links &lt;- page %&gt;%\n  html_nodes(\"a\") %&gt;%\n  html_attr(\"href\")\nfile_links &lt;- unique(file_links[grepl(url_data, file_links) &\n                                  file_links != url_data])\nfile_links &lt;- sub(\"/blob/\", \"/\", file_links)\ndir.create(\"data\")\nfor(i in paste0(\"https://raw.githubusercontent.com\", file_links))\n  download.file(i, file.path(\"data\", basename(i)), method = \"curl\")\n\n\n\n\n\n\n\nAchte auf deiner Speicherplatz!\n\n\n\nZum Herunterladen dieser Dateien werden ca. 38 MB freier Speicherplatz benötigt. Da die Berechnungen mit den Rasterdatensätzen neue, ebenfalls große Dateien erzeugen, sollte ein Vielfaches dieser Größe frei gehalten werden, um damit auf dem eigenen PC arbeiten zu können.\n\n\nHier ein Zahl 38."
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#bodenfeuchte-messungen",
@@ -130,7 +130,7 @@
     "href": "Lernmaterial/Dateien/index.html#straßennetz-in-bochum",
     "title": "Verteilte Dateien",
     "section": "Straßennetz in Bochum",
-    "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"type\"])"
+    "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"highway\"])"
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#krankenhäuser",

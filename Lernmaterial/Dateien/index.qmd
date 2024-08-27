@@ -96,7 +96,7 @@ Dieser Datensatz wurde mit Hilfe des Paketes `osmdata` (siehe [dieses Tutorial](
 library(sf)
 #library(ggplot2)
 Bochum_str <- readRDS("data/roads.rds")
-plot(Bochum_str["type"])
+plot(Bochum_str["highway"])
 ```
 
 ## Krankenhäuser
