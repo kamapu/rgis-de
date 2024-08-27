@@ -207,6 +207,6 @@
     "href": "Lernmaterial/Schummelzettel/index.html",
     "title": "Schummelzettel",
     "section": "",
-    "text": "Wenn man die Arbeit mit R lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente. Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.\n\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet \nThe Carpentries Glosario"
+    "text": "Wenn man die Arbeit mit R lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente. Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.\n\nRStudio IDE Cheat Sheet\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet\nSpatial manipulation with sf Cheat Sheet\nLeaflet for R Cheat Sheet"
   }
 ]
