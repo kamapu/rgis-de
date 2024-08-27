@@ -5,9 +5,11 @@ listing:
     - Lernmaterial/Foliensatz/index.qmd
     - Lernmaterial/Installieren/index.qmd
     - Lernmaterial/Dateien/index.qmd
+    - Lernmaterial/Skripten/index.qmd
+    - Lernmaterial/Schummelzettel/index.qmd
     - Lernmaterial/Lesenswert/index.qmd
-    - Lernmaterial/Quellen/index.qmd
     - Lernmaterial/Projekt/index.qmd
+    - Lernmaterial/Quellen/index.qmd
   type: grid
   sort: false
 ---

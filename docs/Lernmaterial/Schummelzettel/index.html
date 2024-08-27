@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel Alvarez">
-<meta name="description" content="Eine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.">
+<meta name="description" content="Eine Sammlung von Schummelblättern.">
 
-<title>Grundlagen von GIS</title>
+<title>Schummelzettel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,26 +125,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
-   
-  <ul>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link active" data-scroll-target="#requirements">Requirements</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Grundlagen von GIS</h1>
+<h1 class="title">Schummelzettel</h1>
 </div>
 
 <div>
   <div class="description">
-    Eine Kurzeinführung in die GIS-Begriffe und die entsprechende Arbeit mit R.
+    Eine Sammlung von Schummelblättern.
   </div>
 </div>
 
@@ -195,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">26. August 2024</p>
+      <p class="date">27. August 2024</p>
     </div>
   </div>
   
@@ -213,34 +172,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="requirements" class="level1">
-<h1>Requirements</h1>
-<p>Downloading the data from <a href="gis_data.zip">here</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://kamapu.gitlab.io/coachingR/Topics/GIS/gis_data.zip"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> <span class="st">"gis_data.zip"</span>, <span class="at">method =</span> <span class="st">"curl"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"gis_data.zip"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"gis_data.zip"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise" class="level1">
-<h1>Exercise</h1>
-<p>Following landscape elements are recognized in the raster <strong>dem_big.asc</strong>.</p>
+<p>Wenn man die Arbeit mit <strong>R</strong> lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente. Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.</p>
 <ul>
-<li>Oberrheingraben</li>
-<li>Neuwieder Becken</li>
-<li>Oberen Mittelrhein</li>
-<li>Unteren Mittelrhein</li>
-<li>Westerwald</li>
-<li>Eifel</li>
-<li>Hunsrück</li>
-<li>Taunus</li>
+<li><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Short’s R Reference Card</a></li>
+<li><a href="https://r-graph-gallery.com/">The R Graph Gallery</a></li>
+<li><a href="https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html">R Color Chart</a></li>
+<li><a href="https://posit.co/wp-content/uploads/2022/10/tidyr.pdf">Data tidying with <code>tidyr</code> Cheat Sheet</a></li>
+<li><a href="https://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf"><code>knitr</code> Reference Card</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://www.markdowntutorial.com/">Interaktives Markdown Tutorial</a></li>
+<li><a href="https://yihui.org/knitr/options/">Code Chunk Options for knitr and Rmarkdown</a></li>
+<li><a href="https://glosario.carpentries.org/">The Carpentries Glosario</a></li>
 </ul>
-<p>Plot the DEM and add labels showing their respective positions.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
