@@ -12,4 +12,8 @@ draft: false
 - [Tag 1](Tag-1.R)
 - [Tag 2](Tag-2.R)
   - [Beispiel für das Herunterladen von Objekten aus OSM](0-import-osm.R)
-
+- Tag 3
+  - [Vormittags-Sitzung](Tag-3-vormittags.R)
+  - [Nachmittags-Sitzung](Tag-3-nachmittags.R)
+  - [Beispiel für den Import aus WorldClim](0-import-worldclim.R)
+  

@@ -34,8 +34,9 @@ Alternativ kannst du die folgenden Kommandozeilen kopieren und in deine Konsole 
 update.packages(ask = FALSE)
 
 # Step 2: Install missing requirements
-pkgs <- c("tidyr", "dplyr", "rvest", "sf", "ggplot2", "terra", "stars", "osmdata",
-"leaflet",  "mapview", "geodata")
+pkgs <- c("tidyr", "dplyr", "rvest", "sf", "ggplot2", "terra",
+  "stars", "osmdata", "tidyterra", "rasterVis", "leaflet",
+  "mapview", "geodata")
 
 missing_pkgs <- pkgs[!pkgs %in% installed.packages()]
 
