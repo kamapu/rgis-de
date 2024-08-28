@@ -5,7 +5,7 @@ author: Miguel Alvarez
 date-modified: today
 image: tidyr.png
 description:
-  Eine Sammlung von Schummelblättern.
+  Eine Sammlung von Schummelblättern und hilfsreichen Links.
 draft: false
 ---
 
@@ -22,6 +22,8 @@ Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.
   Sheet](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
 - [Spatial manipulation with `sf` Cheat Sheet](https://github.com/rstudio/cheatsheets/blob/main/sf.pdf)
 - [Leaflet for R Cheat Sheet](https://github.com/rstudio/cheatsheets/blob/main/sf.pdf)
+- [Leaflet Providers Preview](http://leaflet-extras.github.io/leaflet-providers/preview/index.html)
+- [Karten der Landschaften in Deutschland](https://upload.wikimedia.org/wikipedia/commons/7/7f/Deutschland_Landschaften.png)
 <!-- - [`knitr` Reference
   Card](https://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf)
 - [R Markdown Cheat
