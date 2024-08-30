@@ -12,6 +12,7 @@ toc: false
 - Geobotanik
 - Data-Science
 - Statistisches Programmieren mit R
+- Geographische Informationssysteme
 
 Langjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika.
 Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken.
@@ -24,4 +25,3 @@ Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto.
 
 :::
 ::::
-

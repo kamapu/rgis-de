@@ -46,7 +46,7 @@
     "href": "Trainer.html",
     "title": "Trainer",
     "section": "",
-    "text": "Miguel Alvarez\n\n\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
+    "text": "Miguel Alvarez\n\n\n\nVegetationsökologie\nGeobotanik\nData-Science\nStatistisches Programmieren mit R\nGeographische Informationssysteme\n\nLangjährige Erfahrung als Vegetationsökologe mit Feldforschungen in Ostafrika und Südamerika. Forschungsschwerpunkte sind Feuchtgebietsökologie, biologische Invasionen, syntaxonomische Klassifikationen und Vegetationsdatenbanken. Aktiver Entwickler verschiedener R-Pakete und Erweiterungen für Quarto."
   },
   {
     "objectID": "Sitzungen.html",
@@ -130,7 +130,7 @@
     "href": "Lernmaterial/Dateien/index.html#straßennetz-in-bochum",
     "title": "Verteilte Dateien",
     "section": "Straßennetz in Bochum",
-    "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\n#library(ggplot2)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"highway\"])"
+    "text": "Straßennetz in Bochum\nStraßennetz von Bochum aus Open Street Maps. Dieser Datensatz wurde mit Hilfe des Paketes osmdata (siehe dieses Tutorial) direkt in R heruntergeladen und als sf-Objekt in einer rds-Datei gespeichert.\n\nlibrary(sf)\nBochum_str &lt;- readRDS(\"data/roads.rds\")\nplot(Bochum_str[\"highway\"])"
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#krankenhäuser",
@@ -151,7 +151,7 @@
     "href": "Lernmaterial/Dateien/index.html#geländemodel-dgm200m",
     "title": "Verteilte Dateien",
     "section": "Geländemodel DGM200m",
-    "text": "Geländemodel DGM200m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-200m.tif\")\nplot(DGM)"
+    "text": "Geländemodel DGM200m\nEin digitales Geländemodell (DGM) mit einer Gitterweite von 200 m. Das Modell stammt aus dem Portal des Bundesamtes für Kartographie und Geodäsie und wurde aus der Umgebung von Bochum ausgeschnitten. Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Format umgewandelt.\n\nlibrary(terra)\nDGM &lt;- rast(\"data/dgm-200m.tif\")\nplot(DGM)\ncontour(DGM, add = TRUE)"
   },
   {
     "objectID": "Lernmaterial/Dateien/index.html#geländemodel-dgm1000m",
@@ -200,7 +200,7 @@
     "href": "Lernmaterial/Skripten/index.html",
     "title": "Gesammelte Skripten",
     "section": "",
-    "text": "Tag 1\nTag 2\n\nBeispiel für das Herunterladen von Objekten aus OSM\n\nTag 3\n\nVormittags-Sitzung\nNachmittags-Sitzung\nBeispiel für den Import aus WorldClim"
+    "text": "Tag 1\nTag 2\n\nBeispiel für das Herunterladen von Objekten aus OSM\n\nTag 3\n\nVormittags-Sitzung\nNachmittags-Sitzung\nBeispiel für den Import aus WorldClim\n\nTag 4\n\nVormittags-Sitzung\nNachmittags-Sitzung\nBeispiel für Lineares Model"
   },
   {
     "objectID": "Lernmaterial/Schummelzettel/index.html",

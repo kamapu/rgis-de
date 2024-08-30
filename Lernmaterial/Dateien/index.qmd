@@ -94,7 +94,6 @@ Dieser Datensatz wurde mit Hilfe des Paketes `osmdata` (siehe [dieses Tutorial](
 
 ```{r}
 library(sf)
-#library(ggplot2)
 Bochum_str <- readRDS("data/roads.rds")
 plot(Bochum_str["highway"])
 ```
@@ -167,6 +166,7 @@ Die Originaldatei liegt im ASCII-Format vor, hier wurde sie in das GeoTiff-Forma
 library(terra)
 DGM <- rast("data/dgm-200m.tif")
 plot(DGM)
+contour(DGM, add = TRUE)
 ```
 
 
@@ -183,6 +183,3 @@ DGM <- rast("data/dgm-1000m.asc")
 crs(DGM) <- "epsg:25832"
 plot(DGM)
 ```
-
-
-

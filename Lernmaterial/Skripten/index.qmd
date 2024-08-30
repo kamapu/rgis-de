@@ -16,4 +16,7 @@ draft: false
   - [Vormittags-Sitzung](Tag-3-vormittags.R)
   - [Nachmittags-Sitzung](Tag-3-nachmittags.R)
   - [Beispiel für den Import aus WorldClim](0-import-worldclim.R)
-  
+- Tag 4
+  - [Vormittags-Sitzung](Tag-4-vormittags.R)
+  - [Nachmittags-Sitzung](Tag-4-nachmittags.R)
+  - [Beispiel für Lineares Model](4-model.R)
