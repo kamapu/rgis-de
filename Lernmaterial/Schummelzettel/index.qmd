@@ -12,23 +12,19 @@ draft: false
 Wenn man die Arbeit mit **R** lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente.
 Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.
 
-- [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/blob/main/rstudio-ide.pdf)
+- [RStudio IDE Cheat Sheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf)
 - [Short's R Reference
   Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
 - [The R Graph Gallery](https://r-graph-gallery.com/)
 - [R Color
   Chart](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)
-- [Data tidying with `tidyr` Cheat
-  Sheet](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
-- [Spatial manipulation with `sf` Cheat Sheet](https://github.com/rstudio/cheatsheets/blob/main/sf.pdf)
-- [Leaflet for R Cheat Sheet](https://github.com/rstudio/cheatsheets/blob/main/sf.pdf)
+- [How Big is your Graph?](https://rstudio.github.io/cheatsheets/how-big-is-your-graph.pdf)
+- [Data Visualization with `ggplot2`](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+- [Data Tidying with `tidyr`](https://rstudio.github.io/cheatsheets/tidyr.pdf)
+- [Data Transformation with `dplyr`](https://rstudio.github.io/cheatsheets/data-transformation.pdf)
+- [Spatial Manipulation with `sf`](https://rstudio.github.io/cheatsheets/sf.pdf)
+- [`leaflet` for R Cheat Sheet](https://rstudio.github.io/cheatsheets/leaflet.pdf)
 - [Leaflet Providers Preview](http://leaflet-extras.github.io/leaflet-providers/preview/index.html)
+- [Thematic Maps with `cartography`](https://rstudio.github.io/cheatsheets/cartography.pdf)
+- [Thematic Maps with `mapsf`](https://rstudio.github.io/cheatsheets/mapsf.pdf)
 - [Karten der Landschaften in Deutschland](https://upload.wikimedia.org/wikipedia/commons/7/7f/Deutschland_Landschaften.png)
-<!-- - [`knitr` Reference
-  Card](https://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf)
-- [R Markdown Cheat
-  Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-- [Interaktives Markdown Tutorial](https://www.markdowntutorial.com/)
-- [Code Chunk Options for knitr and Rmarkdown](https://yihui.org/knitr/options/) -->
-<!-- - [The Carpentries Glosario](https://glosario.carpentries.org/) -->
-  
