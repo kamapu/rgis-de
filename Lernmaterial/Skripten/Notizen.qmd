@@ -3,10 +3,11 @@ title: Notizen aus dem gemeinsamen Dokument
 author: GIS und R
 date: 2024-08-30
 lang: de
+date-format: long
 format: pdf
 ---
 
-# Background
+# Grundlagen
 
 \color{ForestGreen}
 
@@ -45,11 +46,11 @@ Außerdem mag ich das Format des Blockseminars sehr gerne.
 - date (01.01.1991)
 - time (20:10:10)
 
-# Datentypen für Raster
+# Datentypen für Raster-Datensätze
 
 \color{ForestGreen}
 
-*Nenne (Umwelt-)Variablen, die als Raster Datensätzen analysiert werden können*
+*Nenne (Umwelt-)Variablen, die als Raster-Datensätze analysiert werden können*
 
 \color{black}
 
