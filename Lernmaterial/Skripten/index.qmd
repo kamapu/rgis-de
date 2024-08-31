@@ -20,3 +20,5 @@ draft: false
   - [Vormittags-Sitzung](Tag-4-vormittags.R)
   - [Nachmittags-Sitzung](Tag-4-nachmittags.R)
   - [Beispiel für Lineares Model](4-model.R)
+- [Tag 5](Tag-5.R)
+  - [Notizen aus dem Notepad](Notizen.pdf)

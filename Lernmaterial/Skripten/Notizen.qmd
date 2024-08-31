@@ -1,0 +1,70 @@
+---
+title: Notizen aus dem gemeinsamen Dokument
+author: GIS und R
+date: 2024-08-30
+lang: de
+format: pdf
+---
+
+# Background
+
+\color{ForestGreen}
+
+*Nenne deine Motivation für den Kurs und welche Erfahrung du mit R und GIS schon gemacht hast.*
+
+\color{black}
+
+- Durch den Besuch eines Python Kurses im letzen Semster wurde meine Interesse für die Auswertung von Daten mit Prorgammierung geweckt und deshalb habe ich den Kurs gewählt. 
+Erfahrungen mit R als Programmiersprache habe ich keine. 
+In ArcGis habe ich durch den GIS Kurs an der Uni Grundkenntnisse.
+- Meine Motivation für den Kurs wurde nach dem Modul "Einführung in die Programmierung mit Python" geweckt.
+Diesen hatte ich im letzten Semester und hatte viel Spaß am Programmieren und Auswerten und vor allem am Visualisieren der Daten.
+- Erfahrungen mit R habe ich keine, mit GIS arbeite ich seit 2 Jahren bei einer Firma die Glasfaser betreibt. Dort arbeite ich als Projektanalyst mit QGIS und hab mich schon an ein zwei Workflows probiert.
+Außerdem hatte ich letztes Semester den ArcGIS-Kurs.
+- Ich habe bereits einen Python Kurs besucht und im Studienprojekt arbeiten wir auch mit der Visualisierung von Karten.
+Einen ArcGIS Kurs habe ich teilweise auch schon besucht.
+Ich habe mir gedacht, es wäre interessant Einblicke in ein weiteres Programm bzw. eine Programmiersprache zu bekommen.
+Außerdem mag ich das Format des Blockseminars sehr gerne.
+
+# Datentypen
+
+\color{ForestGreen}
+
+*Welche Typen von Daten kennt Ihr? Kennst du Beispiele davon?*
+
+\color{black}
+
+- integer (1)
+- float (1,5)
+- container (list, tuple, dict)
+- string (Kombination aus text und numerisch möglich)
+- array
+- boolean (True, False)
+- Text ("Hallo Welt")
+- binär (1,0)
+- date (01.01.1991)
+- time (20:10:10)
+
+# Datentypen für Raster
+
+\color{ForestGreen}
+
+*Nenne (Umwelt-)Variablen, die als Raster Datensätzen analysiert werden können*
+
+\color{black}
+
+- Gelände (Höhenangaben)
+- Albedo
+- Luftfeuchtigkeit
+- Windgeschwindigkeit
+- Partikelanzahl (und Größe)
+- Relief
+- Gesteinsart
+- Bodenart
+- Oberflächentemperatur 
+- Solare Einstrahlung 
+- Vegetationstypen
+- Einwohnerdichte
+- Lärm
+- Verkehr (Verkehrssdichte)
+- Satellitenbilder
